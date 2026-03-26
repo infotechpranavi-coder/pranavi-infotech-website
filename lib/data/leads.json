@@ -1,0 +1,22 @@
+[
+    {
+        "id": "lead_1",
+        "name": "Sarah Jenkins",
+        "email": "sarah@future-corp.com",
+        "company": "Future Corp",
+        "subject": "consultation",
+        "message": "Looking for a custom ERP solution.",
+        "status": "new",
+        "date": "2026-02-22T10:00:00Z"
+    },
+    {
+        "id": "lead_2",
+        "name": "Michael Chen",
+        "email": "m.chen@tech-vision.io",
+        "company": "TechVision",
+        "subject": "partnership",
+        "message": "Interested in strategic partnership for AI deployment.",
+        "status": "contacted",
+        "date": "2026-02-21T15:30:00Z"
+    }
+]

@@ -1,0 +1,96 @@
+{
+    "values": [
+        {
+            "icon": "Lightbulb",
+            "title": "Innovation",
+            "description": "Constantly pushing boundaries and embracing new technologies.",
+            "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+            "color": "from-blue-600/20 to-cyan-500/20"
+        },
+        {
+            "icon": "Users",
+            "title": "Collaboration",
+            "description": "Working closely with clients as true partners in success.",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+            "color": "from-emerald-600/20 to-teal-500/20"
+        },
+        {
+            "icon": "Target",
+            "title": "Excellence",
+            "description": "Delivering superior quality in everything we do.",
+            "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+            "color": "from-orange-600/20 to-amber-500/20"
+        },
+        {
+            "icon": "Globe",
+            "title": "Global Impact",
+            "description": "Creating positive change through technology worldwide.",
+            "image": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=800",
+            "color": "from-purple-600/20 to-pink-500/20"
+        }
+    ],
+    "team": [
+        {
+            "name": "Anupam Mishra",
+            "role": "CEO & Founder",
+            "image": "/images/team/ceo.jpg",
+            "bio": "Visionary leader with 20+ years of experience in enterprise digital transformation.",
+            "message": "At Pranavi Infotech, we believe that technology should be an enabler, not a hurdle. Our mission is to bridge the gap between complex engineering and business growth. We are committed to delivering precision-engineered solutions that empower our clients to lead in an ever-evolving digital landscape.",
+            "skills": [
+                "Strategy",
+                "Architecture",
+                "Leadership"
+            ],
+            "experience": "20+ YRS",
+            "projects": "500+"
+        },
+        {
+            "name": "Sarah Chen",
+            "role": "CTO",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800&h=800",
+            "bio": "Former BigTech lead architect specializing in scalable infrastructure and AI.",
+            "skills": [
+                "Cloud",
+                "AI/ML"
+            ],
+            "experience": "12 YRS",
+            "projects": "150+"
+        },
+        {
+            "name": "David Rodriguez",
+            "role": "Head of Solutions",
+            "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800&h=800",
+            "bio": "Expert in strategic consulting and delivering complex software ecosystems.",
+            "skills": [
+                "DevOps",
+                "FinTech"
+            ],
+            "experience": "15 YRS",
+            "projects": "320+"
+        },
+        {
+            "name": "James Wilson",
+            "role": "Director of Growth",
+            "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800&h=800",
+            "bio": "Dedicated to building sustainable partnerships and global market expansion.",
+            "skills": [
+                "Global Scale",
+                "Product"
+            ],
+            "experience": "10 YRS",
+            "projects": "200+"
+        },
+        {
+            "name": "Amara Okafor",
+            "role": "Head of Design",
+            "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800&h=800",
+            "bio": "Award-winning designer focused on human-centric enterprise interfaces.",
+            "skills": [
+                "UX/UI",
+                "Branding"
+            ],
+            "experience": "9 YRS",
+            "projects": "120+"
+        }
+    ]
+}

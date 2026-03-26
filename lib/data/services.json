@@ -1,0 +1,82 @@
+[
+    {
+        "id": "custom-software",
+        "icon": "Code2",
+        "title": "Custom Software Development",
+        "description": "We build custom software that fits your business needs perfectly.",
+        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-blue-500",
+        "bg": "bg-blue-500/10",
+        "accent": "from-blue-500 to-cyan-400"
+    },
+    {
+        "id": "enterprise-software",
+        "icon": "Briefcase",
+        "title": "Enterprise Software",
+        "description": "Powerful applications designed for large-scale business operations.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015",
+        "color": "text-indigo-500",
+        "bg": "bg-indigo-500/10",
+        "accent": "from-indigo-600 to-blue-500"
+    },
+    {
+        "id": "saas-platform",
+        "icon": "Cloud",
+        "title": "SaaS Platform Development",
+        "description": "We create cloud platforms that grow with your company.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-purple-500",
+        "bg": "bg-purple-500/10",
+        "accent": "from-purple-500 to-pink-500"
+    },
+    {
+        "id": "web-development",
+        "icon": "Globe",
+        "title": "Web Development",
+        "description": "Fast and beautiful websites that work great on every device.",
+        "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=2064",
+        "color": "text-sky-500",
+        "bg": "bg-sky-500/10",
+        "accent": "from-sky-500 to-indigo-400"
+    },
+    {
+        "id": "mobile-app",
+        "icon": "Smartphone",
+        "title": "Mobile App Development",
+        "description": "We build fast and easy-to-use apps for iPhone and Android.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-emerald-500",
+        "bg": "bg-emerald-500/10",
+        "accent": "from-emerald-500 to-teal-400"
+    },
+    {
+        "id": "cloud-solutions",
+        "icon": "Layers",
+        "title": "Cloud Solutions",
+        "description": "Helping you move your business to the cloud securely.",
+        "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-cyan-500",
+        "bg": "bg-cyan-500/10",
+        "accent": "from-cyan-500 to-blue-400"
+    },
+    {
+        "id": "devops-automation",
+        "icon": "Terminal",
+        "title": "DevOps & Automation",
+        "description": "Speed up your development with modern automation tools.",
+        "image": "https://images.unsplash.com/photo-1618401471353-b98aade3555d?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-rose-500",
+        "bg": "bg-rose-500/10",
+        "accent": "from-rose-500 to-orange-500"
+    },
+    {
+        "id": "ai-solutions",
+        "icon": "Brain",
+        "title": "AI Solutions",
+        "description": "We use AI to help your business work smarter and faster.",
+        "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070",
+        "color": "text-fuchsia-500",
+        "bg": "bg-fuchsia-500/10",
+        "accent": "from-fuchsia-600 to-purple-500"
+    }
+]

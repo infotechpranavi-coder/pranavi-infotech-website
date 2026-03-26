@@ -1,0 +1,780 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Enriched Vibrant Palette */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --primary-rgb: 59, 130, 246;
+    --accent-purple-rgb: 168, 85, 247;
+
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-outfit: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Electric Blue Primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Cyber Purple Accent */
+    --accent-purple: 270 91% 65%;
+    --accent-emerald: 160 84% 39%;
+
+    --secondary: 222 40% 96%;
+    --secondary-foreground: 222 100% 25%;
+
+    --muted: 222 25% 95%;
+    --muted-foreground: 222 20% 45%;
+
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 25% 92%;
+    --input: 222 25% 92%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    /* Navy base remains for structure */
+    --navy-50: 222 60% 97%;
+    --navy-100: 222 55% 93%;
+    --navy-200: 222 55% 83%;
+    --navy-300: 222 65% 65%;
+    --navy-400: 222 85% 45%;
+    --navy-500: 222 100% 35%;
+    --navy-600: 222 100% 25%;
+    --navy-700: 222 100% 18%;
+    --navy-800: 222 100% 12%;
+    --navy-900: 222 100% 8%;
+  }
+
+  .dark {
+    --background: 222 55% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 50% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 50% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 217 91% 5%;
+
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 217 91% 70%;
+
+    --muted: 222 35% 12%;
+    --muted-foreground: 222 20% 64%;
+
+    --accent: 217 91% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 35% 15%;
+    --input: 222 35% 15%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight leading-[1.1] font-black;
+  }
+
+  code,
+  pre,
+  .mono-text {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth scroll behavior and modern scrollbar */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 border-2 border-slate-950 rounded-full hover:bg-primary/50 transition-colors;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Slide up animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide down animation */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Technical Animation Keyframes */
+  @keyframes expandRight {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes drawVertical {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+
+    to {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes revealText {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gridFade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.03;
+    }
+  }
+
+  .animate-expandRight {
+    animation: expandRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-drawVertical {
+    animation: drawVertical 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-revealText {
+    opacity: 0;
+    animation: revealText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-gridFade {
+    opacity: 0;
+    animation: gridFade 2s ease-out forwards;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    opacity: 0;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  /* Slide left animation */
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Slide right animation */
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slideLeft {
+    opacity: 0;
+    animation: slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slideRight {
+    opacity: 0;
+    animation: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Blob Animation */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%) translateX(-50%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+  }
+
+  .animate-navEntrance {
+    animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes maskReveal {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  @keyframes powerUp {
+
+    0%,
+    100% {
+      transform: scale(1);
+      filter: brightness(1) drop-shadow(0 0 0px hsl(var(--primary) / 0));
+    }
+
+    50% {
+      transform: scale(1.05);
+      filter: brightness(1.2) drop-shadow(0 0 10px hsl(var(--primary) / 0.3));
+    }
+  }
+
+  @keyframes borderDraw {
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseSubtle {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-maskReveal {
+    animation: maskReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes lightLeak {
+
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: scale(1.2) translate(20px, -20px);
+    }
+  }
+
+  @keyframes flare {
+
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.1;
+    }
+
+    50% {
+      transform: rotate(180deg) scale(1.5);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes surfaceIllumination {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-lightLeak {
+    animation: lightLeak 12s ease-in-out infinite;
+  }
+
+  .animate-flare {
+    animation: flare 20s linear infinite;
+  }
+
+  .animate-surface {
+    background-size: 200% 200%;
+    animation: surfaceIllumination 15s ease infinite;
+  }
+
+  .animate-scan {
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scanVertical {
+    0% {
+      top: -100%;
+    }
+
+    100% {
+      top: 100%;
+    }
+  }
+
+  .animate-scanVertical {
+    animation: scanVertical 10s linear infinite;
+  }
+
+  @keyframes tech-notate {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(5px);
+    }
+
+    100% {
+      opacity: 0.2;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-tech-notate {
+    animation: tech-notate 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes cardEntrance {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-cardEntrance {
+    animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes sweep {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(200%);
+    }
+  }
+
+  .animate-sweep {
+    animation: sweep 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes drawVertical {
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+
+  .animate-drawVertical {
+    animation: drawVertical 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes dataStream {
+
+    0%,
+    100% {
+      opacity: 0.1;
+      filter: brightness(1);
+    }
+
+    50% {
+      opacity: 0.3;
+      filter: brightness(1.5);
+    }
+  }
+
+  .animate-dataStream {
+    animation: dataStream 4s ease-in-out infinite;
+  }
+
+  /* High-end Button Utilities */
+  .btn-diagnostic-primary {
+    @apply relative overflow-hidden transition-all duration-500 font-bold tracking-tight px-10 py-4 text-lg bg-primary text-primary-foreground;
+  }
+
+  .btn-diagnostic-primary::before {
+    content: '';
+    @apply absolute top-0 w-20 h-full bg-white/20 skew-x-[-20deg] blur-lg pointer-events-none;
+    animation: scan 4s linear infinite;
+  }
+
+  .btn-diagnostic-secondary {
+    @apply relative overflow-hidden transition-all duration-500 font-bold tracking-tight px-10 py-4 text-lg bg-transparent border border-border text-foreground hover:tracking-widest;
+  }
+
+  .btn-diagnostic-secondary::after {
+    content: '';
+    @apply absolute inset-0 bg-primary/5 translate-y-full transition-transform duration-500 ease-out z-0;
+  }
+
+  .btn-diagnostic-secondary:hover::after {
+    @apply translate-y-0 text-white;
+  }
+
+  .btn-diagnostic-secondary:hover {
+    @apply border-primary text-primary;
+  }
+
+  /* Minimal shadow - very subtle */
+  .shadow-minimal {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-minimal-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Subtle underline hover effect */
+  .underline-hover {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .underline-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--foreground);
+    transition: width 0.3s ease;
+  }
+
+  .underline-hover:hover::after {
+    width: 100%;
+  }
+
+  /* Minimal button styles */
+  .btn-minimal {
+    @apply px-5 py-2.5 font-medium text-sm transition-colors duration-300;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+  }
+
+  .btn-minimal:hover {
+    background: hsl(220, 15%, 20%);
+    border-color: hsl(220, 15%, 20%);
+  }
+
+  .btn-minimal-outline {
+    @apply px-5 py-2.5 font-medium text-sm transition-colors duration-300;
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--border);
+  }
+
+  .btn-minimal-outline:hover {
+    background: var(--secondary);
+    border-color: var(--foreground);
+  }
+
+  /* Light divider */
+  .divider-minimal {
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* High-fidelity Global Utilities */
+  .kinetic-overlay {
+    @apply fixed inset-0 pointer-events-none z-[50] opacity-[0.015];
+    background-image:
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+  }
+
+  .holographic-noise {
+    @apply relative overflow-hidden;
+  }
+
+  .holographic-noise::before {
+    content: "";
+    @apply absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  }
+
+  @keyframes scannerReveal {
+    0% {
+      clip-path: inset(0 100% 0 0);
+      filter: brightness(2) contrast(1.5);
+    }
+
+    50% {
+      clip-path: inset(0 0 0 0);
+      filter: brightness(1.2) contrast(1);
+    }
+
+    100% {
+      clip-path: inset(0 0 0 0);
+      filter: brightness(1) contrast(1);
+    }
+  }
+
+  @keyframes scannerLine {
+    0% {
+      left: -5%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      left: 105%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes hudPulse {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes jitter {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    10% {
+      transform: translate(-1px, -1px);
+    }
+
+    20% {
+      transform: translate(1px, 1px);
+    }
+
+    30% {
+      transform: translate(-1px, 1px);
+    }
+
+    40% {
+      transform: translate(1px, -1px);
+    }
+
+    50% {
+      transform: translate(-1px, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  .animate-scannerReveal {
+    animation: scannerReveal 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-scannerLine {
+    animation: scannerLine 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-hudPulse {
+    animation: hudPulse 4s ease-in-out infinite;
+  }
+
+  .animate-jitter {
+    animation: jitter 0.2s infinite;
+  }
+}
