@@ -23,6 +23,11 @@ export function ScrollAnimate({
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -62,6 +67,7 @@ export function ScrollAnimate({
       style={{
         transitionDelay: isVisible ? `${delay}ms` : '0ms',
         animationDuration: `${duration}ms`,
+        willChange: 'transform, opacity',
       }}
     >
       {children}

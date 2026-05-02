@@ -1,258 +1,172 @@
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ScrollAnimate } from '@/components/scroll-animate'
-import { SpotlightCard } from '@/components/ui/spotlight-card'
+import Link from 'next/link'
 import {
-  Code2,
-  Briefcase,
-  Cloud,
-  Globe,
-  Smartphone,
-  Layers,
-  Terminal,
+  ArrowUpRight,
   Brain,
-  Cpu,
-  BarChart3,
-  Zap,
-  Palette,
+  Building2,
+  Cloud,
+  Code2,
+  Compass,
   Shield,
-  Activity,
-  RefreshCw,
-  Settings,
-  CheckCircle2,
-  Microscope,
-  Dna,
-  Gauge,
-  Bot,
-  Lock,
+  Sparkles,
+  Wrench,
+  type LucideIcon,
 } from 'lucide-react'
-import { getServices } from '@/lib/cms'
+import {
+  servicesCatalog,
+  servicesIntro,
+  servicesPositioning,
+  type ServiceCategory,
+} from '@/lib/data/services-catalog'
+import { cn } from '@/lib/utils'
 
-const iconMap: { [key: string]: any } = {
-  Code2,
-  Briefcase,
-  Cloud,
-  Globe,
-  Smartphone,
-  Layers,
-  Terminal,
-  Brain,
-  Cpu,
-  BarChart3,
-  Zap,
-  Palette,
-  Shield,
-  Activity,
-  RefreshCw,
-  Settings,
-  CheckCircle2,
-  Microscope,
-  Dna,
-  Gauge,
-  Bot,
-  Lock,
+const categoryIcons: Record<ServiceCategory['icon'], LucideIcon> = {
+  code: Code2,
+  cloud: Cloud,
+  brain: Brain,
+  building: Building2,
+  shield: Shield,
+  compass: Compass,
+  wrench: Wrench,
+  sparkles: Sparkles,
 }
 
 export const metadata = {
   title: 'Services - Pranavi Infotech',
   description:
-    'Explore our comprehensive technology solutions including software development, consulting, cloud services, and more.',
+    'End-to-end IT solutions: application development, cloud, data & AI, enterprise systems, security, consulting, managed services, and emerging tech.',
 }
 
-export default async function ServicesPage() {
-  const serviceCategories = await getServices()
+export default function ServicesPage() {
   return (
-    <main className="bg-white selection:bg-primary selection:text-white relative min-h-screen">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-primary/20 selection:text-slate-900">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-12 md:pb-16 overflow-hidden bg-slate-50">
-        {/* VIBRANT ATMOSPHERIC BACKGROUND */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(var(--primary-rgb),0.1),transparent_50%),radial-gradient(circle_at_0%_100%,rgba(var(--accent-purple-rgb),0.05),transparent_50%)] animate-pulse-subtle" />
-          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px] animate-blob" />
-          <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      {/* Hero */}
+      <header className="relative border-b border-slate-200/80 pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          aria-hidden
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgb(226 232 240 / 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.5) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+        <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-primary/[0.07] blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-56 rounded-full bg-accent-purple/[0.06] blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-4 inline-flex items-center gap-2 font-outfit text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            Our services
+          </p>
+          <h1 className="font-outfit text-4xl font-semibold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+            Your stack,{' '}
+            <span className="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">
+              end to end.
+            </span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            {servicesIntro}
+          </p>
         </div>
+      </header>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center lg:text-left max-w-3xl">
-            <div className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6 flex items-center justify-center lg:justify-start gap-4">
-              <span className="w-12 h-px bg-primary animate-expandRight" />
-              <span className="animate-revealText" style={{ animationDelay: '0.2s' }}>02 / Comprehensive Capabilities</span>
-            </div>
-            <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.85] animate-maskReveal mb-8">
-              Modern <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-purple to-primary italic">Software.</span>
-            </h1>
-            <p className="text-xl text-slate-500/80 leading-relaxed font-light animate-revealText" style={{ animationDelay: '0.8s' }}>
-              We provide expert software development and smart technology solutions to help your business grow and succeed.
-            </p>
-          </div>
+      {/* Jump nav */}
+      <nav
+        aria-label="Service categories"
+        className="sticky top-[calc(var(--announcement-height,0px)+3.5rem)] z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md"
+      >
+        <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {servicesCatalog.map((cat) => (
+            <a
+              key={cat.id}
+              href={`#${cat.id}`}
+              className="shrink-0 rounded-full border border-transparent px-3 py-1.5 font-outfit text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 transition-colors hover:border-slate-200 hover:bg-slate-50 hover:text-slate-900"
+            >
+              {cat.title.replace(' and ', ' + ')}
+            </a>
+          ))}
         </div>
-      </section>
+      </nav>
 
-      {/* Services Grid */}
-      <section className="py-12 md:py-16 bg-white relative z-10">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 -mt-16 md:-mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {serviceCategories.map((service, index) => {
-              const Icon = iconMap[service.icon] || Briefcase
-              return (
-                <ScrollAnimate key={service.id || service.title} delay={index * 50}>
-                  <div className="relative isolate h-full group">
-                    {/* Background Bloom */}
-                    <div className={`absolute -inset-4 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-700 rounded-full z-0`} />
-
-                    <SpotlightCard
-                      className="h-full bg-white border-slate-100 hover:border-transparent transition-all duration-700 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 group rounded-[2.5rem]"
-                    >
-                      {/* Image Header */}
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
-                      </div>
-
-                      <div className="p-10 pt-4 h-full flex flex-col relative z-10">
-                        {/* Icon Container */}
-                        <div className={`w-16 h-16 ${service.bg} ${service.color} rounded-2xl flex items-center justify-center mb-8 transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[0_0_30px_-5px] group-hover:shadow-current -mt-12 bg-white/80 backdrop-blur-md shadow-lg border border-white/20`}>
-                          <Icon className="w-8 h-8" />
-                        </div>
-
-                        {/* Title & Description */}
-                        <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tighter group-hover:text-slate-800 transition-colors duration-500 leading-tight">
-                          {service.title}
-                        </h3>
-                        <p className="text-slate-500/80 leading-relaxed font-light mb-8 flex-grow text-sm group-hover:text-slate-600 transition-colors duration-500">
-                          {service.description}
-                        </p>
-
-
-                        {/* Dynamic Accent Line */}
-                        <div className={`absolute bottom-0 left-0 h-1.5 bg-gradient-to-r ${service.accent} w-0 group-hover:w-full transition-all duration-700`} />
-                      </div>
-                    </SpotlightCard>
+      {/* Categories */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {servicesCatalog.map((category, catIndex) => {
+          const Icon = categoryIcons[category.icon]
+          const n = String(catIndex + 1).padStart(2, '0')
+          return (
+            <ScrollAnimate key={category.id} delay={catIndex * 40}>
+              <section
+                id={category.id}
+                className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24 lg:grid lg:grid-cols-12 lg:gap-12 lg:gap-x-16"
+              >
+                <div className="lg:col-span-4 lg:sticky lg:top-[calc(var(--announcement-height,0px)+3.5rem+3.25rem)] lg:self-start">
+                  <p className="font-mono text-[10px] font-medium uppercase tracking-widest text-slate-400">
+                    {n} / {String(servicesCatalog.length).padStart(2, '0')}
+                  </p>
+                  <div className="mt-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-sm">
+                    <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
                   </div>
-                </ScrollAnimate>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+                  <h2 className="mt-5 font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+                    {category.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                    {category.blurb}
+                  </p>
+                </div>
 
-      <section className="py-20 md:py-24 bg-slate-50 relative overflow-hidden selection:bg-primary selection:text-white">
-        {/* ATMOSPHERIC BACKGROUND */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgba(var(--primary-rgb),0.03),transparent_50%),radial-gradient(circle_at_0%_100%,rgba(var(--accent-purple-rgb),0.03),transparent_50%)]" />
-          <div className="absolute inset-0 opacity-[0.01]" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <ScrollAnimate>
-            <div className="text-center mb-16 md:mb-20">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 border border-primary/10 rounded-full text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                Value Propositions
-              </div>
-              <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-6 italic">
-                Why Choose <span className="text-primary not-italic">Us.</span>
-              </h2>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light leading-relaxed">
-                We are committed to delivering high-quality work and professional engineering that you can trust.
-              </p>
-            </div>
-          </ScrollAnimate>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Quality Assurance',
-                tag: 'RELIABLE',
-                description: 'We build strong and reliable software that works perfectly for your business needs.',
-                icon: Layers,
-                image: 'https://images.unsplash.com/photo-1581092921461-7d15ce20092c?auto=format&fit=crop&q=80&w=2070',
-              },
-              {
-                title: 'Expert Team',
-                tag: 'EXPERTISE',
-                description: 'Our team of experienced engineers uses the latest technology to solve your problems.',
-                icon: Microscope,
-                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070',
-              },
-              {
-                title: 'Smart Strategy',
-                tag: 'PLANNING',
-                description: 'We help you plan for the future by creating clear and effective technical solutions.',
-                icon: Dna,
-                image: 'https://images.unsplash.com/photo-1454165833762-02bc50e61d5d?auto=format&fit=crop&q=80&w=2070',
-              },
-              {
-                title: 'Fast & Efficient',
-                tag: 'SPEED',
-                description: 'We make sure your software runs as fast as possible to keep your users happy.',
-                icon: Gauge,
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015',
-              },
-              {
-                title: 'Modern Tech',
-                tag: 'INNOVATION',
-                description: 'We use modern tools and AI to keep your business competitive and ahead of others.',
-                icon: Bot,
-                image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070',
-              },
-              {
-                title: 'Top Security',
-                tag: 'PROTECTION',
-                description: 'We keep your data safe by using the best security standards and encryption.',
-                icon: Lock,
-                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070',
-              },
-            ].map((item, index) => {
-              const Icon = item.icon
-              return (
-                <ScrollAnimate key={item.title} delay={index * 100}>
-                  <div className="relative isolate h-full group">
-                    {/* ENHANCED VIBRANT GLOWING LIGHT */}
-                    <div className="absolute -inset-8 bg-primary/25 opacity-0 group-hover:opacity-100 blur-[100px] transition-all duration-700 rounded-full z-0 group-hover:scale-125" />
-
-                    <SpotlightCard className="h-full bg-white border-slate-100 hover:border-primary/20 transition-all duration-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 rounded-[2.5rem] overflow-hidden">
-                      {/* Image Header */}
-                      <div className="relative h-40 overflow-hidden">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                      </div>
-
-                      <div className="p-10 pt-2 flex flex-col h-full relative z-10">
-                        <div className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase mb-8 flex items-center gap-3">
-                          <span className="w-8 h-px bg-primary/20 group-hover:bg-primary transition-all duration-500" />
-                          {item.tag}
-                        </div>
-
-                        <div className="w-12 h-12 bg-white rounded-xl shadow-lg border border-slate-100 flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 -mt-14 relative z-20 backdrop-blur-md bg-white/80">
-                          <Icon size={24} />
-                        </div>
-
-                        <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tighter group-hover:text-primary transition-colors">
+                <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:col-span-8 lg:mt-0">
+                  {category.items.map((item) => (
+                    <article
+                      key={item.title}
+                      className={cn(
+                        'group rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-200',
+                        'hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_12px_40px_-24px_rgba(var(--primary-rgb),0.35)]',
+                      )}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="font-outfit text-[15px] font-semibold leading-snug text-slate-900 md:text-base">
                           {item.title}
                         </h3>
-
-                        <p className="text-slate-500 leading-relaxed font-light text-sm group-hover:text-slate-600 transition-colors flex-grow">
-                          {item.description}
-                        </p>
+                        <ArrowUpRight
+                          className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                          strokeWidth={1.75}
+                        />
                       </div>
-                    </SpotlightCard>
-                  </div>
-                </ScrollAnimate>
-              )
-            })}
-          </div>
+                      <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
+                        {item.description}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </ScrollAnimate>
+          )
+        })}
+      </div>
+
+      {/* Positioning */}
+      <section className="border-t border-slate-100 bg-slate-50/80 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <ScrollAnimate>
+            <p className="font-outfit text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
+              Positioning
+            </p>
+            <p className="mt-6 font-outfit text-lg font-medium leading-relaxed text-slate-800 md:text-xl">
+              {servicesPositioning}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center gap-2 rounded-full border border-slate-900 bg-slate-900 px-6 py-3 font-outfit text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+            >
+              Start a project
+              <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+            </Link>
+          </ScrollAnimate>
         </div>
       </section>
 

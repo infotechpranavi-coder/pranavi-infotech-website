@@ -92,8 +92,8 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="John Doe"
-            className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+            placeholder="Enter your full name"
+            className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground placeholder-muted-foreground/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300"
           />
         </div>
         <div>
@@ -106,8 +106,8 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder="john@example.com"
-            className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+            placeholder="Enter your email address"
+            className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground placeholder-muted-foreground/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300"
           />
         </div>
       </div>
@@ -123,8 +123,8 @@ export function ContactForm() {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            placeholder="Your Company"
-            className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+            placeholder="Enter your company name"
+            className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground placeholder-muted-foreground/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300"
           />
         </div>
         <div>
@@ -136,8 +136,8 @@ export function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
-            className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+            placeholder="Enter your contact number"
+            className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground placeholder-muted-foreground/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300"
           />
         </div>
       </div>
@@ -152,9 +152,9 @@ export function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+          className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300"
         >
-          <option value="">Select a subject</option>
+          <option value="">Select the subject of your inquiry</option>
           <option value="consultation">Consultation</option>
           <option value="support">Support</option>
           <option value="partnership">Partnership</option>
@@ -173,9 +173,9 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          placeholder="Tell us about your project or inquiry..."
+          placeholder="Provide details about your requirement or inquiry"
           rows={6}
-          className="w-full px-4 py-3 border border-border rounded-lg bg-white text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300 resize-none"
+          className="w-full px-4 py-3 border border-white/15 rounded-xl bg-white/5 text-foreground placeholder-muted-foreground/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 focus:shadow-[0_0_0_3px_rgba(var(--primary-rgb),0.12)] transition-all duration-300 resize-none"
         />
       </div>
 
@@ -183,7 +183,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-primary hover:bg-accent text-primary-foreground font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-50"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-[0_14px_32px_-18px_rgba(var(--primary-rgb),0.9)] disabled:opacity-50"
       >
         {isLoading ? 'Sending...' : 'Send Message'}
       </Button>

@@ -1,0 +1,37 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anupam Mishra">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0.12"/>
+    </linearGradient>
+    <radialGradient id="r" cx="35%" cy="25%" r="80%">
+      <stop offset="0" stop-color="#0f172a" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="1200" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="1200" fill="url(#g)"/>
+  <rect x="0" y="0" width="1200" height="1200" fill="url(#r)"/>
+
+  <g opacity="0.2">
+    <path d="M0 240H1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M0 480H1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M0 720H1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M0 960H1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M240 0V1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M480 0V1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M720 0V1200" stroke="#94a3b8" stroke-width="1"/>
+    <path d="M960 0V1200" stroke="#94a3b8" stroke-width="1"/>
+  </g>
+
+  <circle cx="600" cy="520" r="220" fill="#0f172a" fill-opacity="0.06"/>
+  <circle cx="600" cy="520" r="180" fill="#0f172a" fill-opacity="0.04"/>
+
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="140" font-weight="800" fill="#0f172a" fill-opacity="0.72" letter-spacing="8">
+    AM
+  </text>
+  <text x="600" y="650" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="28" font-weight="600" fill="#3b82f6" fill-opacity="0.75" letter-spacing="6">
+    FOUNDER
+  </text>
+</svg>
+

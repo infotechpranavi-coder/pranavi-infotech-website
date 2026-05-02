@@ -100,14 +100,9 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="py-24 md:py-40 bg-white relative overflow-hidden selection:bg-primary selection:text-white">
-      {/* VIBRANT BACKGROUND ELEMENTS */}
+      {/* Minimal background elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Subtle Mesh Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(var(--primary-rgb),0.03),transparent_40%),radial-gradient(circle_at_100%_100%,rgba(var(--accent-purple-rgb),0.03),transparent_40%)]" />
-
-        {/* Peripheral Glows */}
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent-purple/5 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(var(--primary-rgb),0.02),transparent_40%),radial-gradient(circle_at_100%_100%,rgba(var(--accent-purple-rgb),0.02),transparent_40%)]" />
 
         {/* Technical Grid Overlay */}
         <div
@@ -167,58 +162,39 @@ export function ServicesSection() {
           <div className="flex gap-8 cursor-grab active:cursor-grabbing">
             {services.map((service, index) => {
               const Icon = service.icon
-              const nodeCode = `0x${(index + 10).toString(16).toUpperCase()}_${(index * 137 % 999).toString(16).toUpperCase()}`
               const isActive = selectedIndex === index
 
               return (
                 <div key={service.title} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
                   style={{
-                    opacity: isActive ? 1 : 0.75,
-                    transform: isActive ? 'scale(1.02)' : 'scale(0.97)',
-                    filter: isActive ? 'none' : 'saturate(0.8)',
+                    opacity: isActive ? 1 : 0.9,
                   }}
                 >
-                  <div className="group relative [perspective:1000px] h-full py-4">
-                    {/* Background Bloom */}
-                    <div className={`absolute -inset-4 bg-gradient-to-br ${service.accent} opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-700 rounded-full z-0`} />
-
-                    <SpotlightCard className="h-full bg-white border-slate-100 hover:border-transparent transition-all duration-700 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 group rounded-[2.5rem] shadow-[inset_0_0_40px_rgba(0,0,0,0.02)] group-hover:shadow-[inset_0_0_60px_rgba(0,0,0,0.04)]">
-                      <div className="p-10 h-full flex flex-col relative z-20">
+                  <div className="group relative h-full py-4">
+                    <SpotlightCard className="h-full transition-all duration-300 overflow-hidden group rounded-[1.75rem]">
+                      <div className="p-8 md:p-9 h-full flex flex-col">
 
                         {/* Icon Container */}
-                        <div className="flex justify-between items-start mb-12">
-                          <div className={`w-16 h-16 ${service.bg} ${service.color} rounded-2xl flex items-center justify-center transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[0_0_30px_-5px] group-hover:shadow-current`}>
-                            <Icon className="w-8 h-8" />
+                        <div className="flex items-start justify-between gap-6 mb-8">
+                          <div className={`w-12 h-12 ${service.bg} ${service.color} rounded-2xl flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.03]`}>
+                            <Icon className="w-6 h-6" />
                           </div>
-                          <div className="opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-2 group-hover:translate-x-0">
-                            <ArrowUpRight className="w-6 h-6 text-primary" />
-                          </div>
+                          <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover:text-primary transition-colors duration-200" />
                         </div>
 
-                        <div className="overflow-hidden mb-6">
-                          <h3 className="text-3xl font-black text-slate-900 tracking-tighter group-hover:text-primary transition-colors duration-500 leading-tight">
+                        <div className="overflow-hidden mb-4">
+                          <h3 className="text-2xl font-semibold text-slate-900 tracking-tight leading-tight">
                             {service.title}
                           </h3>
                         </div>
 
-                        <p className="text-slate-500/80 leading-relaxed font-light mb-12 group-hover:text-slate-600 transition-colors duration-500 text-sm">
+                        <p className="text-slate-600 leading-relaxed font-normal mb-10 text-sm">
                           {service.description}
                         </p>
 
-                        {/* Diagnostic Overlay */}
-                        <div className="mt-auto pt-8 border-t border-slate-50 group-hover:border-slate-100 transition-colors relative">
-                          <div className="flex justify-between items-end">
-                            <div className="space-y-1">
-                              <p className="text-[8px] font-mono text-primary/40 uppercase tracking-widest group-hover:text-primary group-hover:animate-pulse transition-colors">Diagnostic_Node</p>
-                              <p className="text-[10px] font-mono text-slate-400 group-hover:text-slate-900 transition-colors duration-500">{nodeCode}</p>
-                            </div>
-                            <div className="flex gap-1 h-3 items-end">
-                              {[1, 2, 3, 4, 3, 2, 1].map((h, i) => (
-                                <div key={i} className={`w-0.5 rounded-full ${service.color.replace('text', 'bg').replace('500', '200')} group-hover:${service.color.replace('text', 'bg')} transition-all duration-700`} style={{ height: `${h * 2}px`, animationDelay: `${i * 0.1}s` }} />
-                              ))}
-                            </div>
-                          </div>
-                          <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${service.accent} w-0 group-hover:w-full transition-all duration-700 -mb-1`} />
+                        <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                          <span className="text-xs font-medium text-slate-500">Learn more</span>
+                          <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors duration-200" />
                         </div>
                       </div>
                     </SpotlightCard>
@@ -230,36 +206,25 @@ export function ServicesSection() {
             {/* Contact Node Card */}
             <div className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto py-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
               style={{
-                opacity: selectedIndex === services.length ? 1 : 0.75,
-                transform: selectedIndex === services.length ? 'scale(1.02)' : 'scale(0.97)',
-                filter: selectedIndex === services.length ? 'none' : 'saturate(0.8)',
+                opacity: selectedIndex === services.length ? 1 : 0.9,
               }}>
-              <Link href="/contact" className="group relative h-full [perspective:1000px] block">
-                <div className="h-full bg-primary rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden shadow-2xl shadow-primary/20 hover:scale-[1.02] transition-all duration-700 cursor-pointer relative">
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform duration-500">
-                      <ArrowUpRight className="text-white w-6 h-6" />
+              <Link href="/contact" className="group relative h-full block">
+                <div className="h-full bg-white rounded-[1.75rem] p-8 md:p-9 flex flex-col justify-between overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-[box-shadow,transform,border-color] duration-200 cursor-pointer relative">
+                  <div>
+                    <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-8">
+                      <ArrowUpRight className="text-primary w-5 h-5" />
                     </div>
-                    <h3 className="text-3xl font-black text-white tracking-tighter mb-6">
-                      Ready to <br /><span className="italic">Transform?</span>
+                    <h3 className="text-2xl font-semibold text-slate-900 tracking-tight mb-4">
+                      Ready to transform?
                     </h3>
-                    <p className="text-white/60 font-light leading-relaxed">
-                      Initiate a high-impact architectural consultation for your organization today.
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                      Book a quick consultation and we’ll map the fastest path to your next release.
                     </p>
                   </div>
 
-                  <div className="relative z-10 flex items-center gap-4 text-white font-bold text-sm tracking-[0.2em] uppercase mt-12 group-hover:gap-6 transition-all duration-500">
-                    Schedule a Call
-                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </div>
-
-                  {/* Decorative Elements */}
-                  <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-blob" />
-                  <div className="absolute top-0 right-0 w-32 h-32 border-r border-t border-white/10 rounded-tr-[2.5rem] m-4" />
-
-                  {/* Technical Coordinates */}
-                  <div className="absolute top-10 right-10 text-[8px] font-mono text-white/20 writing-mode-vertical">
-                    [NODE.INIT_88A]
+                  <div className="flex items-center justify-between pt-6 border-t border-slate-100 mt-10">
+                    <span className="text-sm font-medium text-slate-800">Schedule a call</span>
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors duration-200" />
                   </div>
                 </div>
               </Link>
