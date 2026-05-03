@@ -165,7 +165,7 @@ export function ServicesSection() {
               const isActive = selectedIndex === index
 
               return (
-                <div key={service.title} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                <div key={service.title} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto transition-all duration-700 ease-out-soft"
                   style={{
                     opacity: isActive ? 1 : 0.9,
                   }}
@@ -204,7 +204,7 @@ export function ServicesSection() {
             })}
 
             {/* Contact Node Card */}
-            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto py-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+            <div className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_31%] min-w-0 h-auto py-4 transition-all duration-700 ease-out-soft"
               style={{
                 opacity: selectedIndex === services.length ? 1 : 0.9,
               }}>

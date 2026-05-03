@@ -117,7 +117,7 @@ export function ProcessSection() {
             <div
               className="h-full bg-gradient-to-r from-blue-400 via-primary to-amber-400 rounded-full origin-left"
               style={{
-                animation: 'expandRight 2.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both',
+                animation: 'expandRight 2.5s var(--ease-out-smooth) 0.3s both',
               }}
             />
             {/* Traveling Light */}
@@ -148,7 +148,7 @@ export function ProcessSection() {
                   key={step.number}
                   className="flex flex-col items-center relative"
                   style={{
-                    animation: `slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.15 + 0.5}s both`,
+                    animation: `slideUp 0.6s var(--ease-out-smooth) ${index * 0.15 + 0.5}s both`,
                   }}
                 >
                   {isAbove ? (
@@ -226,7 +226,7 @@ export function ProcessSection() {
             <div
               className="w-full h-full bg-gradient-to-b from-blue-400 via-primary to-amber-400 rounded-full origin-top"
               style={{
-                animation: 'drawVertical 2.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both',
+                animation: 'drawVertical 2.5s var(--ease-out-smooth) 0.3s both',
               }}
             />
           </div>

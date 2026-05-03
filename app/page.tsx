@@ -3,8 +3,12 @@ import { Footer } from '@/components/footer'
 import { WhyChooseUs } from '@/components/why-choose-us'
 import { ScrollAnimate } from '@/components/scroll-animate'
 import { TechAnnouncementBar } from '@/components/tech-announcement-bar'
+import { HomeServicesSlider } from '@/components/home-services-slider'
+import { HomeWhyApproach } from '@/components/home-why-approach'
+import { HomeIndustriesRow } from '@/components/home-industries-row'
+import { homePageServices } from '@/lib/data/home-services'
 import Link from 'next/link'
-import { ArrowUpRight, Check } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 export const metadata = {
   title: 'Pranavi Infotech - Enterprise Technology Solutions',
@@ -12,74 +16,11 @@ export const metadata = {
     'Building reliable, scalable, and future-ready digital solutions for real business outcomes.',
 }
 
-const services = [
-  {
-    title: 'Application Development',
-    description:
-      'We design and build web applications, mobile applications, and custom software tailored to business requirements.',
-  },
-  {
-    title: 'Cloud and Infrastructure',
-    description:
-      'We help businesses migrate, manage, and optimize cloud environments for flexibility, cost efficiency, and availability.',
-  },
-  {
-    title: 'Data and AI Solutions',
-    description:
-      'We enable organizations to leverage data through analytics, reporting systems, and AI-driven applications.',
-  },
-  {
-    title: 'Enterprise Systems',
-    description:
-      'We implement ERP and CRM systems to streamline operations, improve customer management, and boost productivity.',
-  },
-  {
-    title: 'DevOps and Automation',
-    description:
-      'We establish automated workflows, CI/CD pipelines, and infrastructure processes to improve delivery speed and reliability.',
-  },
-  {
-    title: 'Cybersecurity and Compliance',
-    description:
-      'We implement security controls, risk management frameworks, and compliance solutions to protect critical systems and data.',
-  },
-  {
-    title: 'IT Consulting and Digital Transformation',
-    description:
-      'We guide organizations in adopting the right technologies and modernizing legacy systems for long-term growth.',
-  },
-]
-
-const whyPranavi = [
-  'Client-Centric Approach',
-  'Strong Technical Expertise',
-  'Structured Execution',
-  'Scalable Solutions',
-  'Focus on Security and Reliability',
-  'End-to-End Capabilities',
-]
-
-const approach = [
-  'Requirement Analysis',
-  'Planning and Architecture',
-  'Development and Implementation',
-  'Quality Assurance',
-  'Deployment and Optimization',
-  'Ongoing Support',
-]
-
-const industries = [
-  'Banking and Financial Services',
-  'Healthcare and Life Sciences',
-  'Retail and E-Commerce',
-  'Real Estate and Construction',
-  'Manufacturing and Supply Chain',
-]
-
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-primary/20 selection:text-slate-900">
+    <>
       <TechAnnouncementBar />
+      <main className="min-h-screen bg-white text-slate-900 selection:bg-primary/20 selection:text-slate-900">
       <Navbar />
 
       <section className="relative overflow-hidden border-b border-slate-200/80 pt-28 pb-16 md:pt-32 md:pb-20">
@@ -168,7 +109,7 @@ export default function HomePage() {
       </section>
 
       <section className="border-y border-slate-100 bg-slate-50/70 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollAnimate>
             <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
               Our services
@@ -177,88 +118,25 @@ export default function HomePage() {
               Comprehensive IT services for modern businesses.
             </p>
           </ScrollAnimate>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((item, i) => (
-              <ScrollAnimate key={item.title} delay={i * 45}>
-                <article className="h-full rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_12px_40px_-24px_rgba(var(--primary-rgb),0.3)]">
-                  <h3 className="font-outfit text-[15px] font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
-                </article>
-              </ScrollAnimate>
-            ))}
+          <div className="mt-10">
+            <HomeServicesSlider services={homePageServices} />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-        <div className="grid gap-10 xl:grid-cols-12 xl:gap-14">
-          <div className="min-w-0 xl:col-span-6">
-            <ScrollAnimate>
-              <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
-                Why Pranavi Infotech
-              </h2>
-              <p className="mt-2 text-sm text-slate-600 md:text-base">
-                A reliable partner for technology execution.
-              </p>
-            </ScrollAnimate>
-            <div className="mt-8 grid gap-3">
-              {whyPranavi.map((item, i) => (
-                <ScrollAnimate key={item} delay={i * 45}>
-                  <div className="flex min-w-0 items-start gap-2 rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm leading-relaxed text-slate-700">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Check className="h-3 w-3" strokeWidth={2.5} />
-                    </span>
-                    <span className="break-words">{item}</span>
-                  </div>
-                </ScrollAnimate>
-              ))}
-            </div>
-          </div>
+      <HomeWhyApproach />
 
-          <div className="min-w-0 xl:col-span-6">
-            <ScrollAnimate>
-              <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
-                Our approach
-              </h2>
-              <p className="mt-2 text-sm text-slate-600 md:text-base">
-                A structured methodology for consistent results.
-              </p>
-            </ScrollAnimate>
-            <ol className="mt-8 grid gap-3">
-              {approach.map((step, i) => (
-                <ScrollAnimate key={step} delay={i * 45}>
-                  <li className="rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm leading-relaxed text-slate-700">
-                    <span className="mr-2 font-mono text-[10px] uppercase tracking-widest text-primary">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="break-words">{step}</span>
-                  </li>
-                </ScrollAnimate>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-100 bg-slate-50/70 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-slate-100 bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollAnimate>
-            <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+            <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
               Industries we serve
             </h2>
-            <p className="mt-2 text-sm text-slate-600 md:text-base">
+            <p className="mt-2 max-w-2xl text-sm text-slate-600 md:text-base">
               Delivering solutions across multiple sectors.
             </p>
           </ScrollAnimate>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, i) => (
-              <ScrollAnimate key={industry} delay={i * 45}>
-                <div className="rounded-2xl border border-slate-200/90 bg-white p-5">
-                  <h3 className="font-outfit text-[15px] font-semibold text-slate-900">{industry}</h3>
-                </div>
-              </ScrollAnimate>
-            ))}
-          </div>
+          <HomeIndustriesRow />
         </div>
       </section>
 
@@ -309,33 +187,9 @@ export default function HomePage() {
 
       <WhyChooseUs />
 
-      <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8">
-        <ScrollAnimate>
-          <p className="font-outfit text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
-            Call to action
-          </p>
-          <h2 className="mt-4 font-outfit text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-            Partner with a reliable technology team
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-            If you are looking for a technology partner who understands your business needs and delivers practical,
-            scalable solutions, Pranavi Infotech is ready to support your journey.
-          </p>
-          <p className="mt-2 text-base leading-relaxed text-slate-600 md:text-lg">
-            Let’s discuss how we can help you build, improve, or scale your digital systems.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-full border border-slate-900 bg-slate-900 px-6 py-3 font-outfit text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-          >
-            Get in touch today
-            <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-          </Link>
-        </ScrollAnimate>
-      </section>
-
       <Footer />
-    </main>
+      </main>
+    </>
   )
 }
 

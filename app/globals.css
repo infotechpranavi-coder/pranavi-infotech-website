@@ -59,6 +59,10 @@
     --navy-700: 222 100% 18%;
     --navy-800: 222 100% 12%;
     --navy-900: 222 100% 8%;
+
+    /* Easing (referenced in CSS + inline styles — avoids Tailwind false-matching ease-[…] from TS strings) */
+    --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out-soft: cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .dark {
@@ -130,11 +134,19 @@
   select {
     transition-property: color, background-color, border-color, transform, box-shadow, opacity;
     transition-duration: 220ms;
-    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transition-timing-function: var(--ease-out-smooth);
   }
 }
 
 @layer utilities {
+  .ease-out-smooth {
+    transition-timing-function: var(--ease-out-smooth);
+  }
+
+  .ease-out-soft {
+    transition-timing-function: var(--ease-out-soft);
+  }
+
   .text-balance {
     text-wrap: balance;
   }

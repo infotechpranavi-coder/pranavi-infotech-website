@@ -5,30 +5,46 @@ import { X, Zap, Radio } from 'lucide-react'
 import Link from 'next/link'
 
 const messages = [
-    { label: 'NEW', text: 'Parnavi Infotech now offers AI-powered digital marketing solutions', href: '/services' },
+    { label: 'NEW', text: 'Pranavi Infotech now offers AI-powered digital marketing solutions', href: '/services' },
     { label: 'LIVE', text: '500+ enterprises globally trust our technology infrastructure', href: '/about' },
     { label: 'HOT', text: 'Get a free consultation — transform your business today', href: '/contact' },
 ]
 
+/** Stable SSR + first paint markup — avoids hydration mismatches from client-only subtrees. */
+const BAR_SHELL_CLASS =
+    'relative z-[40] h-10 shrink-0 overflow-hidden border-b border-primary/30 bg-[#020617]'
+
 export function TechAnnouncementBar() {
+    const [mounted, setMounted] = useState(false)
     const [visible, setVisible] = useState(true)
     const [currentIdx, setCurrentIdx] = useState(0)
 
     useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    useEffect(() => {
+        if (!mounted) return
         if (visible) {
             document.documentElement.style.setProperty('--announcement-height', '40px')
         } else {
             document.documentElement.style.setProperty('--announcement-height', '0px')
         }
-        return () => { document.documentElement.style.removeProperty('--announcement-height') }
-    }, [visible])
+        return () => {
+            document.documentElement.style.removeProperty('--announcement-height')
+        }
+    }, [mounted, visible])
+
+    if (!mounted) {
+        return <div className={BAR_SHELL_CLASS} aria-hidden />
+    }
 
     if (!visible) return null
 
     const msg = messages[currentIdx]
 
     return (
-        <div className="relative z-[40] bg-[#020617] border-b border-primary/30 overflow-hidden">
+        <div className={`${BAR_SHELL_CLASS}`}>
             {/* Scanning beam */}
             <div className="absolute top-0 w-24 h-full bg-primary/10 skew-x-[-20deg] blur-xl pointer-events-none animate-scan"
                 style={{ animationDuration: '5s' }} />
