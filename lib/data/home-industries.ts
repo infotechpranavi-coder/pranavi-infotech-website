@@ -2,6 +2,7 @@ export type HomeIndustryIcon = 'landmark' | 'heart-pulse' | 'shopping-cart' | 'b
 
 export type HomeIndustry = {
   title: string
+  eyebrow: string
   description: string
   icon: HomeIndustryIcon
   /** Gradient icon disc + ring */
@@ -15,7 +16,8 @@ export type HomeIndustry = {
 export const homeIndustries: HomeIndustry[] = [
   {
     title: 'Banking and Financial Services',
-    description: 'Secure, compliant and innovative solutions.',
+    eyebrow: 'Compliance-led platforms',
+    description: 'Secure digital systems for modern finance.',
     icon: 'landmark',
     iconClass:
       'bg-gradient-to-br from-sky-400 to-blue-600 text-white ring-2 ring-white shadow-lg shadow-blue-500/40',
@@ -24,7 +26,8 @@ export const homeIndustries: HomeIndustry[] = [
   },
   {
     title: 'Healthcare and Life Sciences',
-    description: 'Technology solutions that improve patient care.',
+    eyebrow: 'Patient-centric systems',
+    description: 'Care-focused platforms built for clarity and trust.',
     icon: 'heart-pulse',
     iconClass:
       'bg-gradient-to-br from-violet-400 to-purple-600 text-white ring-2 ring-white shadow-lg shadow-purple-500/40',
@@ -33,7 +36,8 @@ export const homeIndustries: HomeIndustry[] = [
   },
   {
     title: 'Retail and E-Commerce',
-    description: 'Scalable platforms and retail solutions.',
+    eyebrow: 'Growth-ready commerce',
+    description: 'Fast commerce experiences across stores and channels.',
     icon: 'shopping-cart',
     iconClass:
       'bg-gradient-to-br from-emerald-400 to-teal-600 text-white ring-2 ring-white shadow-lg shadow-emerald-500/40',
@@ -42,7 +46,8 @@ export const homeIndustries: HomeIndustry[] = [
   },
   {
     title: 'Real Estate and Construction',
-    description: 'Smart property and construction solutions.',
+    eyebrow: 'Built for operations',
+    description: 'Smart workflows for property, projects, and teams.',
     icon: 'building',
     iconClass:
       'bg-gradient-to-br from-amber-400 to-orange-600 text-white ring-2 ring-white shadow-lg shadow-orange-500/40',
@@ -51,7 +56,8 @@ export const homeIndustries: HomeIndustry[] = [
   },
   {
     title: 'Manufacturing and Supply Chain',
-    description: 'Optimize operations and strengthen resilience.',
+    eyebrow: 'Operational resilience',
+    description: 'Connected operations with stronger delivery visibility.',
     icon: 'factory',
     iconClass:
       'bg-gradient-to-br from-fuchsia-400 to-violet-600 text-white ring-2 ring-white shadow-lg shadow-violet-500/40',

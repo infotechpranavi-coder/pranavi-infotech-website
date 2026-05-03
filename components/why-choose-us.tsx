@@ -149,14 +149,20 @@ export function WhyChooseUs() {
                   <div className="flex flex-wrap justify-center gap-3.5 md:gap-4 px-4">
                     {[
                       { name: 'Next.js', cat: 'frontend' }, { name: 'React', cat: 'frontend' }, { name: 'TypeScript', cat: 'frontend' },
+                      { name: 'JavaScript', cat: 'frontend' }, { name: 'HTML5', cat: 'frontend' }, { name: 'CSS3', cat: 'frontend' },
                       { name: 'Node.js', cat: 'backend' }, { name: 'Go', cat: 'backend' }, { name: 'Python', cat: 'backend' },
-                      { name: 'Rust', cat: 'backend' }, { name: 'AWS', cat: 'cloud' }, { name: 'Azure', cat: 'cloud' },
-                      { name: 'GCP', cat: 'cloud' }, { name: 'Kubernetes', cat: 'devops' }, { name: 'Docker', cat: 'devops' },
-                      { name: 'Terraform', cat: 'devops' }, { name: 'PostgreSQL', cat: 'data' }, { name: 'MongoDB', cat: 'data' },
+                      { name: 'Rust', cat: 'backend' }, { name: 'Java', cat: 'backend' }, { name: '.NET', cat: 'backend' },
+                      { name: 'AWS', cat: 'cloud' }, { name: 'Azure', cat: 'cloud' }, { name: 'GCP', cat: 'cloud' },
+                      { name: 'Cloudflare', cat: 'cloud' }, { name: 'Vercel', cat: 'cloud' }, { name: 'Kubernetes', cat: 'devops' },
+                      { name: 'Docker', cat: 'devops' }, { name: 'Terraform', cat: 'devops' }, { name: 'GitHub Actions', cat: 'devops' },
+                      { name: 'Jenkins', cat: 'devops' }, { name: 'PostgreSQL', cat: 'data' }, { name: 'MongoDB', cat: 'data' },
                       { name: 'Redis', cat: 'data' }, { name: 'Elasticsearch', cat: 'data' }, { name: 'GraphQL', cat: 'data' },
+                      { name: 'MySQL', cat: 'data' }, { name: 'Kafka', cat: 'data' }, { name: 'Snowflake', cat: 'data' },
                       { name: 'PyTorch', cat: 'ai' }, { name: 'TensorFlow', cat: 'ai' }, { name: 'OpenAI', cat: 'ai' },
+                      { name: 'LangChain', cat: 'ai' }, { name: 'Hugging Face', cat: 'ai' }, { name: 'Vector DBs', cat: 'ai' },
                       { name: 'Tailwind CSS', cat: 'frontend' }, { name: 'Framer Motion', cat: 'frontend' }, { name: 'Three.js', cat: 'frontend' },
-                      { name: 'Vite', cat: 'devops' }, { name: 'Svelte', cat: 'frontend' }, { name: 'Vue.js', cat: 'frontend' }
+                      { name: 'Vite', cat: 'devops' }, { name: 'Svelte', cat: 'frontend' }, { name: 'Vue.js', cat: 'frontend' },
+                      { name: 'Nuxt', cat: 'frontend' }, { name: 'Astro', cat: 'frontend' }
                     ].map((tech) => (
                       <div
                         key={tech.name}

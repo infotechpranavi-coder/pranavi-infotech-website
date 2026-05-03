@@ -77,7 +77,7 @@ export default function CareersPage() {
       {/* Jump nav */}
       <nav
         aria-label="Careers sections"
-        className="sticky top-[calc(var(--announcement-height,0px)+3.5rem)] z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md"
+        className="border-b border-slate-200/80 bg-white/85 backdrop-blur-md"
       >
         <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {navLinks.map((item) => (
@@ -103,7 +103,7 @@ export default function CareersPage() {
               Why work with us
             </h2>
             <p className="mt-2 max-w-xl text-sm text-slate-600 md:text-base">
-              The things that make Pranavi a place to grow—not just clock in.
+              The things that make Pranavi a place to grow, not just clock in.
             </p>
           </ScrollAnimate>
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -143,7 +143,7 @@ export default function CareersPage() {
               Open positions
             </h2>
             <p className="mt-2 max-w-xl text-sm text-slate-600 md:text-base">
-              Pick a role and email us your resume—we read every application.
+              Pick a role and email us your resume. We read every application.
             </p>
           </ScrollAnimate>
           <div className="mt-10 grid gap-3 md:grid-cols-2">
@@ -162,7 +162,7 @@ export default function CareersPage() {
                     {job.description}
                   </p>
                   <a
-                    href={`mailto:${applyInfo.email}?subject=${encodeURIComponent(`Application — ${job.title}`)}`}
+                    href={`mailto:${applyInfo.email}?subject=${encodeURIComponent(`Application - ${job.title}`)}`}
                     className="mt-4 inline-flex items-center gap-1.5 font-outfit text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-colors group-hover:gap-2"
                   >
                     Apply
@@ -186,8 +186,7 @@ export default function CareersPage() {
                   Who we&apos;re looking for
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  No perfection required—just curiosity, ownership, and respect
-                  for the craft.
+                  No perfection required, just curiosity, ownership, and respect for the craft.
                 </p>
               </ScrollAnimate>
             </div>
@@ -259,33 +258,71 @@ export default function CareersPage() {
           className="scroll-mt-[10rem] py-16 md:py-24"
         >
           <ScrollAnimate>
-            <div className="rounded-3xl border border-slate-200/90 bg-slate-50/90 p-8 md:p-12">
-              <h2 className="font-outfit text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
-                {applyInfo.headline}
-              </h2>
-              <p className="mt-3 text-slate-600">{applyInfo.intro}</p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-8">
-                <a
-                  href={`mailto:${applyInfo.email}`}
-                  className="inline-flex items-center gap-2 font-outfit text-lg font-semibold text-primary hover:underline"
-                >
-                  <Mail className="h-5 w-5 shrink-0" strokeWidth={1.75} />
-                  {applyInfo.email}
-                </a>
-                <span className="hidden text-slate-300 sm:inline">·</span>
-                <span className="inline-flex items-center gap-2 text-slate-700">
-                  <MapPin className="h-5 w-5 shrink-0 text-slate-400" strokeWidth={1.75} />
-                  {applyInfo.location}
-                </span>
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_52%,#ffffff_100%)] p-6 shadow-[0_24px_70px_-42px_rgba(15,23,42,0.16)] md:p-10">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.1),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.06),transparent_28%)]" />
+              <div
+                className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                aria-hidden
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to right, rgb(226 232 240 / 0.65) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.65) 1px, transparent 1px)',
+                  backgroundSize: '36px 36px',
+                  maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.82), rgba(0,0,0,0.18))',
+                }}
+              />
+
+              <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_320px] lg:items-end">
+                <div className="max-w-2xl">
+                  <div className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-1.5 font-outfit text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-700">
+                    Careers at Pranavi
+                  </div>
+                  <h2 className="mt-4 font-outfit text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
+                    {applyInfo.headline}
+                  </h2>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-base">
+                    {applyInfo.intro} Share your profile and we&apos;ll connect with you if there&apos;s a strong match.
+                  </p>
+
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <a
+                      href={`mailto:${applyInfo.email}`}
+                      className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 font-outfit text-sm font-semibold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
+                    >
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-50 text-primary">
+                        <Mail className="h-4 w-4 shrink-0" strokeWidth={1.9} />
+                      </span>
+                      {applyInfo.email}
+                    </a>
+                    <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 font-outfit text-sm font-medium text-slate-700 shadow-sm">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+                        <MapPin className="h-4 w-4 shrink-0" strokeWidth={1.9} />
+                      </span>
+                      {applyInfo.location}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-[1.5rem] border border-slate-200/90 bg-white/92 p-5 shadow-[0_18px_50px_-36px_rgba(15,23,42,0.18)]">
+                  <div className="font-outfit text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Quick action
+                  </div>
+                  <div className="mt-2 font-outfit text-xl font-semibold tracking-tight text-slate-950">
+                    Prefer to reach out first?
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Use the contact page for role questions, introductions, or hiring conversations.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-outfit text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-slate-800"
+                  >
+                    Contact form
+                    <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+                  </Link>
+                </div>
               </div>
-              <Link
-                href="/contact"
-                className="mt-10 inline-flex items-center gap-2 rounded-full border border-slate-900 bg-slate-900 px-6 py-3 font-outfit text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-              >
-                Contact form
-                <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-              </Link>
-              <p className="mt-10 border-t border-slate-200/80 pt-8 text-center text-xs leading-relaxed text-slate-500 md:text-sm">
+
+              <p className="relative mt-8 border-t border-slate-200/80 pt-6 text-center text-xs leading-relaxed text-slate-500 md:text-sm">
                 {equalOpportunity}
               </p>
             </div>

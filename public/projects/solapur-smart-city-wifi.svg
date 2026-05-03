@@ -1,0 +1,19 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="166" height="34" rx="17" fill="#DCFCE7"/>
+  <text x="80" y="79" fill="#15803D" font-family="Arial, sans-serif" font-size="16" font-weight="700">SMART CITY</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Solapur Smart City</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">Public Wi-Fi Application</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Managed access for better civic connectivity</text>
+  <path d="M610 322C610 276 647 238 694 238" stroke="#16A34A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M578 322C578 259 629 208 694 208" stroke="#22C55E" stroke-width="16" stroke-linecap="round"/>
+  <path d="M548 322C548 242 613 176 694 176" stroke="#86EFAC" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="694" cy="322" r="18" fill="#15803D"/>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0FDF4"/>
+      <stop offset="1" stop-color="#ECFEFF"/>
+    </linearGradient>
+  </defs>
+</svg>

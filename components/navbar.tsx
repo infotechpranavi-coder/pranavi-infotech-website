@@ -38,15 +38,15 @@ export function Navbar() {
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-6">
+        <div className="flex h-20 items-center justify-between gap-6">
           <Link
             href="/"
-            className="flex items-center shrink-0 rounded-lg px-1.5 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+            className="flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
           >
             <img
               src="/logo-removebg-preview (1).png"
               alt="Pranavi Infotech"
-              className="h-9 sm:h-10 w-auto object-contain select-none"
+              className="h-14 w-auto object-contain select-none sm:h-16"
             />
           </Link>
 

@@ -92,7 +92,7 @@ export const founder = {
   title: "Founder’s message",
   name: 'Anupam Mishra',
   role: 'Founder, Pranavi Infotech',
-  imageSrc: '/founder-anupam.svg',
+  imageSrc: '/images/team/ceo.jpg',
   paragraphs: [
     'Pranavi Infotech was founded with a clear objective: to build a company that delivers reliable technology solutions with consistency and discipline.',
     'Anupam Mishra brings a practical approach to technology delivery, focusing on building systems that are not only functional but also stable, scalable, and maintainable over time.',
@@ -130,11 +130,6 @@ export const team = {
         'Our DevOps professionals manage deployment pipelines, cloud environments, and system monitoring to ensure smooth and reliable operations.',
     },
     {
-      title: 'Work Culture',
-      description:
-        'We maintain a professional work environment focused on discipline, collaboration, and continuous learning. Knowledge sharing and process improvement are integral to how we operate.',
-    },
-    {
       title: 'Commitment to Clients',
       description:
         'Every project we undertake is delivered with a focus on reliability, clarity, and long-term usability. Our goal is to build solutions that clients can depend on.',
@@ -144,4 +139,3 @@ export const team = {
 
 export const aboutClosing =
   'Pranavi Infotech is committed to delivering technology solutions that are practical, reliable, and aligned with real business needs, helping organizations build a strong and sustainable digital foundation.'
-

@@ -1,56 +1,101 @@
 [
-    {
-        "id": "1",
-        "category": "SaaS Architecture",
-        "title": "Global Logistics Suite",
-        "description": "Multi-tenant cloud architecture handling real-time logistics for international shipping corridors.",
-        "image": "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=800",
-        "icon": "Globe",
-        "stats": "500K+ Containers"
-    },
-    {
-        "id": "2",
-        "category": "Predictive AI",
-        "title": "Industrial IoT Analytics",
-        "description": "Deploying neural networks for predictive maintenance in high-precision manufacturing plants.",
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-        "icon": "Cpu",
-        "stats": "40% Cost Redux"
-    },
-    {
-        "id": "3",
-        "category": "Modernization",
-        "title": "Banking Core Transformation",
-        "description": "Surgical migration of mission-critical legacy banking cores to high-availability microservices.",
-        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-        "icon": "Database",
-        "stats": "99.999% Ready"
-    },
-    {
-        "id": "4",
-        "category": "HealthTech",
-        "title": "HIPAA-Compliant Platform",
-        "description": "Secure, zero-latency telemedicine infrastructure enabling global healthcare accessibility.",
-        "image": "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=800",
-        "icon": "Activity",
-        "stats": "1M+ Sessions"
-    },
-    {
-        "id": "5",
-        "category": "Data Engineering",
-        "title": "Smart City Infrastructure",
-        "description": "Real-time data processing engines for urban traffic management and energy optimization.",
-        "image": "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&q=80&w=800",
-        "icon": "Code2",
-        "stats": "2ms Latency"
-    },
-    {
-        "id": "6",
-        "category": "Security",
-        "title": "Fintech API Gateway",
-        "description": "High-security transactional integration layer with autonomous threat mitigation and military-grade encryption.",
-        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-        "icon": "ShieldCheck",
-        "stats": "Zero Breaches"
-    }
+  {
+    "id": "kumbh-mela-ai-crowd-counting",
+    "category": "AI Vision",
+    "title": "Kumbh Mela - AI Crowd Counting System",
+    "description": "AI-enabled crowd intelligence platform designed to support monitoring, public safety visibility, and operational decision-making during high-footfall event environments.",
+    "image": "/projects/kumbh-mela-ai-crowd-counting.svg",
+    "icon": "Brain",
+    "stats": "High-footfall AI"
+  },
+  {
+    "id": "mp-tourism-ai-ar",
+    "category": "Smart Tourism",
+    "title": "MP Tourism - AI & AR Smart Tourism Platform",
+    "description": "Digital tourism experience combining AI-led visitor assistance and AR-powered destination discovery for richer traveler engagement.",
+    "image": "/projects/mp-tourism-ai-ar.svg",
+    "icon": "Smartphone",
+    "stats": "AI + AR"
+  },
+  {
+    "id": "shirdi-tv-darshan",
+    "category": "Streaming Systems",
+    "title": "Shirdi TV Darshan System",
+    "description": "Broadcast and digital darshan delivery system built to support accessible viewing, dependable operations, and public reach.",
+    "image": "/projects/shirdi-tv-darshan.svg",
+    "icon": "Activity",
+    "stats": "Live access"
+  },
+  {
+    "id": "solapur-smart-city-wifi",
+    "category": "Smart City",
+    "title": "Solapur Smart City - Public Wi-Fi Application",
+    "description": "Public connectivity application supporting managed access, service visibility, and smarter civic digital infrastructure.",
+    "image": "/projects/solapur-smart-city-wifi.svg",
+    "icon": "Globe",
+    "stats": "Public Wi-Fi"
+  },
+  {
+    "id": "sra-projects",
+    "category": "Public Systems",
+    "title": "SRA - Slum Rehabilitation Authority Projects",
+    "description": "Digital project support for rehabilitation workflows, institutional operations, and citizen-facing process efficiency.",
+    "image": "/projects/sra-projects.svg",
+    "icon": "Database",
+    "stats": "Authority systems"
+  },
+  {
+    "id": "pune-smart-city-wifi",
+    "category": "Urban Connectivity",
+    "title": "Pune Smart City - Public Wi-Fi Application",
+    "description": "Smart city public Wi-Fi platform designed for scalable access, operational monitoring, and urban digital experience delivery.",
+    "image": "/projects/pune-smart-city-wifi.svg",
+    "icon": "Laptop",
+    "stats": "City network"
+  },
+  {
+    "id": "bmc-projects",
+    "category": "Municipal Tech",
+    "title": "BMC - Brihanmumbai Municipal Corporation Projects",
+    "description": "Technology initiatives supporting municipal workflows, digital governance processes, and city-scale operational systems.",
+    "image": "/projects/bmc-projects.svg",
+    "icon": "Code2",
+    "stats": "Gov delivery"
+  },
+  {
+    "id": "mp-urban-development",
+    "category": "Urban Development",
+    "title": "MP Urban Development Projects",
+    "description": "Project delivery across urban development initiatives with a focus on structured systems, public workflows, and execution clarity.",
+    "image": "/projects/mp-urban-development.svg",
+    "icon": "Globe",
+    "stats": "Urban systems"
+  },
+  {
+    "id": "sikkim-household-survey",
+    "category": "Survey Platform",
+    "title": "Government of Sikkim - Household Survey System",
+    "description": "Household survey platform for structured field data collection, streamlined reporting, and government program visibility.",
+    "image": "/projects/sikkim-household-survey.svg",
+    "icon": "Database",
+    "stats": "Survey ops"
+  },
+  {
+    "id": "meerut-shop-license",
+    "category": "Civic Licensing",
+    "title": "Meerut Nagar Nigam - Shop License Management System",
+    "description": "License management solution for digitized applications, process tracking, and administrative workflow simplification.",
+    "image": "/projects/meerut-shop-license.svg",
+    "icon": "ShieldCheck",
+    "stats": "License flow"
+  },
+  {
+    "id": "saasa-b2e-hrms",
+    "category": "Enterprise HR Tech",
+    "title": "SAASA B2E - HRMS & AI Based Workforce Ecosystem",
+    "description": "Workforce platform combining HRMS capabilities with AI-supported employee operations, visibility, and organizational efficiency.",
+    "image": "/projects/saasa-b2e-hrms.svg",
+    "icon": "Cpu",
+    "stats": "HRMS + AI"
+  }
 ]

@@ -1,0 +1,12 @@
+⚠ Turbopack's filesystem cache has been deleted because we previously detected an internal error in Turbopack. Builds or page loads may be slower as a result.
+
+[1m[33mwarn[39m[22m - The class `duration-[680ms]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;680ms&rsqb;` to silence this warning.
+⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+<activeIcon /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[1m[33mwarn[39m[22m - The class `duration-[1400ms]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;1400ms&rsqb;` to silence this warning.
+[1m[33mwarn[39m[22m - The class `duration-[900ms]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;900ms&rsqb;` to silence this warning.

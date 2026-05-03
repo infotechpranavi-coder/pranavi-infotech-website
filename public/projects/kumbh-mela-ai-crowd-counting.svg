@@ -1,0 +1,18 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="180" height="34" rx="17" fill="#FFF3CD"/>
+  <text x="80" y="79" fill="#B7791F" font-family="Arial, sans-serif" font-size="16" font-weight="700">AI VISION</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Kumbh Mela</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">AI Crowd Counting System</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Public safety visibility for large-scale events</text>
+  <circle cx="620" cy="180" r="78" fill="#F59E0B" fill-opacity="0.16"/>
+  <circle cx="676" cy="214" r="52" fill="#FB923C" fill-opacity="0.22"/>
+  <circle cx="600" cy="312" r="118" fill="#F97316" fill-opacity="0.12"/>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8E1"/>
+      <stop offset="1" stop-color="#FFE7C2"/>
+    </linearGradient>
+  </defs>
+</svg>

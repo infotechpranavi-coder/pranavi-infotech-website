@@ -1,0 +1,21 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="198" height="34" rx="17" fill="#E0F2FE"/>
+  <text x="80" y="79" fill="#0369A1" font-family="Arial, sans-serif" font-size="16" font-weight="700">URBAN CONNECTIVITY</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Pune Smart City</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">Public Wi-Fi Application</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Scalable city-grade public internet services</text>
+  <circle cx="652" cy="238" r="92" fill="#38BDF8" fill-opacity="0.12"/>
+  <circle cx="652" cy="238" r="58" fill="#22C55E" fill-opacity="0.12"/>
+  <circle cx="652" cy="238" r="24" fill="#2563EB" fill-opacity="0.72"/>
+  <path d="M652 124V92" stroke="#F97316" stroke-width="10" stroke-linecap="round"/>
+  <path d="M766 238H734" stroke="#F97316" stroke-width="10" stroke-linecap="round"/>
+  <path d="M570 156L548 134" stroke="#10B981" stroke-width="10" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F9FF"/>
+      <stop offset="1" stop-color="#ECFEFF"/>
+    </linearGradient>
+  </defs>
+</svg>

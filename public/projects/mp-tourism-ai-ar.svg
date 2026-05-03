@@ -1,0 +1,18 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="196" height="34" rx="17" fill="#E0F2FE"/>
+  <text x="80" y="79" fill="#0369A1" font-family="Arial, sans-serif" font-size="16" font-weight="700">SMART TOURISM</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">MP Tourism</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">AI &amp; AR Smart Tourism Platform</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Interactive visitor journeys with digital assistance</text>
+  <rect x="550" y="120" width="142" height="142" rx="30" fill="#0EA5E9" fill-opacity="0.14"/>
+  <rect x="600" y="210" width="122" height="122" rx="28" fill="#22C55E" fill-opacity="0.14"/>
+  <circle cx="630" cy="174" r="30" fill="#0284C7" fill-opacity="0.18"/>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#ECFCCB"/>
+    </linearGradient>
+  </defs>
+</svg>

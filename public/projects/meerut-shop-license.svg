@@ -1,0 +1,17 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="180" height="34" rx="17" fill="#DCFCE7"/>
+  <text x="80" y="79" fill="#166534" font-family="Arial, sans-serif" font-size="16" font-weight="700">CIVIC LICENSING</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Meerut Nagar Nigam</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">Shop License Management System</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Digital workflow for licensing and administrative tracking</text>
+  <rect x="594" y="150" width="116" height="144" rx="24" fill="#16A34A" fill-opacity="0.12"/>
+  <path d="M628 214L646 232L678 196" stroke="#16A34A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0FDF4"/>
+      <stop offset="1" stop-color="#ECFCCB"/>
+    </linearGradient>
+  </defs>
+</svg>

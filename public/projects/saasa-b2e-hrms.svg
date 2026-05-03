@@ -1,0 +1,18 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="744" height="444" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="220" height="34" rx="17" fill="#E0F2FE"/>
+  <text x="80" y="79" fill="#0369A1" font-family="Arial, sans-serif" font-size="16" font-weight="700">ENTERPRISE HR TECH</text>
+  <text x="56" y="160" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">SAASA B2E</text>
+  <text x="56" y="208" fill="#334155" font-family="Arial, sans-serif" font-size="28" font-weight="600">HRMS &amp; AI Workforce Ecosystem</text>
+  <text x="56" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="20">Workforce operations with HRMS structure and AI support</text>
+  <text x="538" y="202" fill="#F59E0B" font-family="Arial, sans-serif" font-size="74" font-weight="700">SAASA</text>
+  <text x="700" y="176" fill="#F59E0B" font-family="Arial, sans-serif" font-size="20" font-weight="700">B2E</text>
+  <text x="538" y="234" fill="#0EA5E9" font-family="Arial, sans-serif" font-size="24" font-weight="600">Sustainable Africa and Successful EU Affairs</text>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="28" x2="772" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+</svg>
