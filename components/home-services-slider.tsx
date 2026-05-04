@@ -137,62 +137,62 @@ export function HomeServicesSlider({ services }: Props) {
               <div
                 key={item.title}
                 className={cn(
-                  'flex min-w-0 flex-[0_0_100%] transition-[transform,opacity,filter] duration-700 ease-out-smooth sm:flex-[0_0_58%] lg:flex-[0_0_42%]',
+                  'flex min-w-0 flex-[0_0_88%] transition-[transform,opacity,filter] duration-700 ease-out-smooth sm:flex-[0_0_46%] lg:flex-[0_0_34%]',
                   isActive ? 'scale-100 opacity-100 blur-0' : 'scale-[0.975] opacity-[0.62] blur-[0.4px]',
                 )}
               >
-                <div className="relative flex w-full overflow-hidden rounded-[1.75rem] shadow-[0_20px_50px_-30px_rgba(15,23,42,0.35)]">
+                <div className="relative flex w-full overflow-hidden rounded-[1.45rem] shadow-[0_18px_42px_-28px_rgba(15,23,42,0.3)]">
                   <div className={cn('absolute inset-0 bg-gradient-to-br opacity-95', accent)} />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.28),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.14),transparent_30%)]" />
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.04),rgba(15,23,42,0.24))]" />
 
-                  <div className="relative grid h-full min-h-[260px] w-full gap-0 lg:min-h-[300px] lg:grid-cols-[0.92fr_1.08fr]">
-                    <div className="relative flex flex-col justify-between p-4 text-white sm:p-4.5 lg:p-5">
+                  <div className="relative grid h-full min-h-[220px] w-full gap-0 lg:min-h-[248px] lg:grid-cols-[0.96fr_1.04fr]">
+                    <div className="relative flex flex-col justify-between p-3.5 text-white sm:p-4 lg:p-4.5">
                       <div>
                         <div className="flex items-start justify-between gap-4">
-                          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 font-outfit text-[9px] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
-                            <Icon className="h-3 w-3" strokeWidth={2} />
+                          <div className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 font-outfit text-[8px] font-semibold uppercase tracking-[0.16em] text-white/90 backdrop-blur">
+                            <Icon className="h-2.5 w-2.5" strokeWidth={2} />
                             Service drop
                           </div>
-                          <div className="rounded-full border border-white/20 bg-white/10 px-3 py-1 font-outfit text-[9px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur">
+                          <div className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 font-outfit text-[8px] font-semibold uppercase tracking-[0.16em] text-white/80 backdrop-blur">
                             {String(index + 1).padStart(2, '0')}
                           </div>
                         </div>
 
-                        <h3 className="mt-4 max-w-sm font-outfit text-[1.45rem] font-semibold leading-[0.96] tracking-tight sm:text-[1.8rem] lg:text-[2.05rem]">
+                        <h3 className="mt-3 max-w-sm font-outfit text-[1.18rem] font-semibold leading-[0.98] tracking-tight sm:text-[1.35rem] lg:text-[1.6rem]">
                           {item.title}
                         </h3>
-                        <p className="mt-2.5 max-w-sm text-[13px] leading-relaxed text-white/82 sm:text-[13px]">
+                        <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-white/82 sm:text-[12px]">
                           {item.description}
                         </p>
                       </div>
 
-                      <div className="mt-5 flex flex-wrap items-center gap-2.5">
+                      <div className="mt-4 flex flex-wrap items-center gap-2">
                         <Link
                           href="/services"
-                          className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 font-outfit text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-slate-950 px-3.5 py-1.5 font-outfit text-[9px] font-semibold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-0.5 hover:bg-black"
                         >
                           Explore more
-                          <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+                          <ArrowUpRight className="h-3 w-3" strokeWidth={2} />
                         </Link>
-                        <div className="rounded-full border border-white/20 bg-white/10 px-3 py-2 font-outfit text-[9px] font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur">
+                        <div className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1.5 font-outfit text-[8px] font-semibold uppercase tracking-[0.16em] text-white/85 backdrop-blur">
                           Business-ready
                         </div>
                       </div>
                     </div>
 
-                    <div className="relative min-h-[180px] overflow-hidden lg:min-h-full">
+                    <div className="relative min-h-[150px] overflow-hidden lg:min-h-full">
                       <img
                         src={item.image}
                         alt={item.title}
                         className="absolute inset-0 h-full w-full object-cover object-center"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-slate-950/8 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-slate-950/20" />
-                      <div className="absolute inset-x-3 bottom-3 rounded-[1rem] border border-white/15 bg-white/12 p-3 backdrop-blur-md sm:inset-x-4 sm:bottom-4 sm:p-3">
-                        <div className="font-outfit text-sm font-semibold text-white sm:text-[15px]">
+                      <div className="absolute inset-x-2.5 bottom-2.5 rounded-[0.9rem] border border-white/15 bg-white/12 p-2.5 backdrop-blur-md sm:inset-x-3 sm:bottom-3 sm:p-2.5">
+                        <div className="font-outfit text-[13px] font-semibold text-white sm:text-sm">
                           Built to move fast and scale right
                         </div>
-                        <div className="mt-1 text-[12px] leading-relaxed text-white/78">
+                        <div className="mt-1 text-[10px] leading-relaxed text-white/78 sm:text-[11px]">
                           Modern delivery, cleaner architecture, and sharper business outcomes.
                         </div>
                       </div>

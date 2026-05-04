@@ -25,7 +25,7 @@ export const whatWeDo = {
   title: 'What we do',
   paragraphs: [
     'We provide end-to-end IT services across application development, cloud infrastructure, enterprise systems, and data-driven solutions. Our work is centered on building systems that are secure, scalable, and aligned with real business use cases.',
-    'We support organizations at different stages—whether it is building new platforms, modernizing existing systems, or improving operational workflows through technology.',
+    'We support organizations at different stages, whether it is building new platforms, modernizing existing systems, or improving operational workflows through technology.',
   ],
 }
 
@@ -89,7 +89,7 @@ export const coreValues = [
 ]
 
 export const founder = {
-  title: "Founder’s message",
+  title: "Founder's message",
   name: 'Anupam Mishra',
   role: 'Founder, Pranavi Infotech',
   imageSrc: '/images/team/ceo.jpg',

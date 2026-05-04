@@ -20,6 +20,7 @@ import {
   whyWorkWithUs,
 } from '@/lib/data/careers-page'
 import { cn } from '@/lib/utils'
+import { TypedText } from '@/components/ui/typed-text'
 
 const navLinks = [
   { href: '#why-us', label: 'Why us' },
@@ -38,13 +39,12 @@ export const metadata = {
 
 export default function CareersPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-primary/20 selection:text-slate-900">
+    <main className="min-h-screen overflow-x-clip bg-[linear-gradient(180deg,#f6f9ff_0%,#ffffff_30%,#f7fbff_100%)] text-slate-900 selection:bg-primary/20 selection:text-slate-900">
       <Navbar />
 
-      {/* Hero */}
-      <header className="relative overflow-hidden border-b border-slate-200/80 pt-28 pb-16 md:pt-32 md:pb-20">
+      <header className="relative overflow-hidden border-b border-white/60 bg-[linear-gradient(180deg,#f7fbff_0%,#ffffff_55%,#f5f9ff_100%)] pt-28 pb-16 md:pt-32 md:pb-20">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          className="pointer-events-none absolute inset-0 opacity-[0.4] animate-gridDrift"
           aria-hidden
           style={{
             backgroundImage:
@@ -52,39 +52,117 @@ export default function CareersPage() {
             backgroundSize: '48px 48px',
           }}
         />
-        <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-primary/[0.07] blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-56 rounded-full bg-accent-purple/[0.06] blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+        <div className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-primary/[0.1] blur-3xl animate-floatSlow" />
+        <div className="pointer-events-none absolute bottom-0 left-0 h-56 w-56 rounded-full bg-accent-purple/[0.08] blur-3xl animate-blob" />
+        <div className="pointer-events-none absolute left-1/2 top-14 h-24 w-[32rem] -translate-x-1/2 rounded-full bg-white/70 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-sky-100/60 blur-3xl animate-lightLeak" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px overflow-hidden">
+          <span className="absolute left-0 top-0 h-px w-40 bg-gradient-to-r from-transparent via-sky-500/80 to-transparent animate-beamSweep" />
+        </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-4 inline-flex items-center gap-2 font-outfit text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            {careersHero.eyebrow}
-          </p>
-          <h1 className="max-w-3xl font-outfit text-4xl font-semibold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-            {careersHero.titleLead}{' '}
-            <span className="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">
-              {careersHero.titleAccent}
-            </span>
-          </h1>
-          <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-            {careersHero.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+            <div>
+              <div className="glass-chip glass-outline inline-flex items-center gap-3 rounded-full px-3 py-2 animate-slideUp">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Sparkles className="h-3.5 w-3.5" strokeWidth={2.2} />
+                </span>
+                <p className="font-outfit text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+                  {careersHero.eyebrow}
+                </p>
+              </div>
+
+              <h1 className="mt-6 max-w-4xl font-outfit text-4xl font-semibold leading-[1.02] tracking-tight text-slate-900 animate-slideUp sm:text-5xl md:text-6xl">
+                {careersHero.titleLead}{' '}
+                <span className="bg-gradient-to-r from-primary via-sky-500 to-accent-purple bg-clip-text text-transparent">
+                  {careersHero.titleAccent}
+                </span>
+              </h1>
+
+              <div className="mt-5 max-w-3xl">
+                <p className="font-outfit text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-slate-400">
+                  We&apos;re hiring for
+                </p>
+                <div className="mt-3 min-h-[3rem] md:min-h-[4.25rem]">
+                  <TypedText
+                    phrases={[
+                      'builders with curiosity',
+                      'engineers with ownership',
+                      'designers with clarity',
+                    ]}
+                    className="bg-gradient-to-r from-slate-900 via-primary to-sky-500 bg-clip-text font-outfit text-3xl font-semibold tracking-tight text-transparent drop-shadow-[0_10px_30px_rgba(59,130,246,0.16)] md:text-5xl"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+                {careersHero.paragraphs.map((p, i) => (
+                  <ScrollAnimate key={i} delay={i * 70}>
+                    <p>{p}</p>
+                  </ScrollAnimate>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {['Growth-first', 'Meaningful projects', 'Tech-led culture'].map((item, index) => (
+                  <ScrollAnimate key={item} delay={120 + index * 60}>
+                    <div className="glass-chip tech-beam inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_35px_-24px_rgba(var(--primary-rgb),0.35)]">
+                      <span className="relative flex h-2.5 w-2.5 items-center justify-center">
+                        <span className="absolute h-2.5 w-2.5 rounded-full bg-primary/20 animate-pulseRing" />
+                        <span className="relative h-2 w-2 rounded-full bg-gradient-to-r from-primary to-sky-400" />
+                      </span>
+                      <span>{item}</span>
+                    </div>
+                  </ScrollAnimate>
+                ))}
+              </div>
+            </div>
+
+            <ScrollAnimate direction="left" className="lg:justify-self-end">
+              <div className="glass-panel-strong glass-outline tech-grid relative overflow-hidden rounded-[2rem] p-6 text-slate-900">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.16),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(96,165,250,0.14),transparent_32%),linear-gradient(160deg,rgba(255,255,255,0.38),rgba(255,255,255,0.08))]" />
+                <div className="pointer-events-none absolute -left-16 top-10 h-28 w-28 rounded-full border border-white/30 animate-driftX" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden">
+                  <span className="absolute left-0 top-0 h-px w-24 bg-gradient-to-r from-transparent via-sky-500/80 to-transparent animate-shimmerLine" />
+                </div>
+
+                <div className="relative space-y-4">
+                  {[
+                    'Learning, mentorship, and real delivery exposure',
+                    'Cross-functional teams with practical ownership',
+                    'Open roles across engineering, design, QA, and data',
+                  ].map((item, index) => (
+                    <div key={item} className="glass-panel rounded-[1.35rem] p-4">
+                      <div className="flex items-start gap-3">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sky-50 text-primary">
+                          <span className="font-outfit text-xs font-semibold">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
+                        </div>
+                        <p className="text-sm leading-relaxed text-slate-700">
+                          {item}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollAnimate>
           </div>
         </div>
       </header>
 
-      {/* Jump nav */}
       <nav
         aria-label="Careers sections"
-        className="border-b border-slate-200/80 bg-white/85 backdrop-blur-md"
+        className="sticky top-0 z-30 border-b border-white/60 bg-white/60 shadow-[0_20px_40px_-36px_rgba(15,23,42,0.2)] backdrop-blur-xl"
       >
         <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {navLinks.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="shrink-0 rounded-full border border-transparent px-3 py-1.5 font-outfit text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 transition-colors hover:border-slate-200 hover:bg-slate-50 hover:text-slate-900"
+              className="glass-chip tech-beam shrink-0 rounded-full border border-transparent px-3 py-1.5 font-outfit text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-200 hover:bg-white/90 hover:text-slate-900"
             >
               {item.label}
             </a>
@@ -93,7 +171,6 @@ export default function CareersPage() {
       </nav>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Why work with us */}
         <section
           id="why-us"
           className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24"
@@ -111,10 +188,11 @@ export default function CareersPage() {
               <ScrollAnimate key={item.title} delay={i * 45}>
                 <article
                   className={cn(
-                    'h-full rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-200',
-                    'hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_12px_40px_-24px_rgba(var(--primary-rgb),0.3)]',
+                    'glass-panel glass-outline tech-grid relative h-full rounded-[1.55rem] p-5 transition-all duration-500',
+                    'hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_18px_56px_-26px_rgba(var(--primary-rgb),0.28)]',
                   )}
                 >
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/80 to-transparent opacity-80" />
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="font-outfit text-[15px] font-semibold leading-snug text-slate-900">
                       {item.title}
@@ -133,7 +211,6 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* Open positions */}
         <section
           id="roles"
           className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24"
@@ -151,10 +228,11 @@ export default function CareersPage() {
               <ScrollAnimate key={job.title} delay={i * 40}>
                 <article
                   className={cn(
-                    'group flex h-full flex-col rounded-2xl border border-slate-200/90 bg-white p-5 transition-all duration-200',
-                    'hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_12px_40px_-24px_rgba(var(--primary-rgb),0.3)]',
+                    'glass-panel glass-outline tech-grid group relative flex h-full flex-col rounded-[1.55rem] p-5 transition-all duration-500',
+                    'hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_18px_56px_-26px_rgba(var(--primary-rgb),0.28)]',
                   )}
                 >
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/80 to-transparent opacity-80" />
                   <h3 className="font-outfit text-[15px] font-semibold leading-snug text-slate-900 md:text-base">
                     {job.title}
                   </h3>
@@ -174,7 +252,6 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* Who we seek */}
         <section
           id="you"
           className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24"
@@ -193,7 +270,7 @@ export default function CareersPage() {
             <ul className="mt-10 space-y-3 lg:col-span-7 lg:mt-0">
               {idealCandidateTraits.map((trait, i) => (
                 <ScrollAnimate key={trait} delay={i * 50}>
-                  <li className="flex gap-3 rounded-xl border border-slate-100 bg-slate-50/80 px-4 py-3 text-sm text-slate-700 md:text-[15px]">
+                  <li className="glass-panel tech-grid flex gap-3 rounded-[1.2rem] px-4 py-3 text-sm text-slate-700 md:text-[15px]">
                     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                       <Check className="h-3 w-3" strokeWidth={2.5} />
                     </span>
@@ -205,7 +282,6 @@ export default function CareersPage() {
           </div>
         </section>
 
-        {/* Hiring process */}
         <section
           id="process"
           className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24"
@@ -221,7 +297,7 @@ export default function CareersPage() {
           <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {hiringProcess.map((phase, i) => (
               <ScrollAnimate key={phase.step} delay={i * 55}>
-                <li className="relative flex h-full flex-col rounded-2xl border border-slate-200/90 bg-white p-5 pt-8">
+                <li className="glass-panel glass-outline tech-grid relative flex h-full flex-col rounded-[1.55rem] p-5 pt-8">
                   <span className="font-mono text-[10px] font-semibold uppercase tracking-widest text-primary">
                     Step {phase.step}
                   </span>
@@ -237,7 +313,6 @@ export default function CareersPage() {
           </ol>
         </section>
 
-        {/* Life at Pranavi */}
         <section
           id="life"
           className="scroll-mt-[10rem] border-b border-slate-100 py-16 md:py-24"
@@ -252,79 +327,93 @@ export default function CareersPage() {
           </ScrollAnimate>
         </section>
 
-        {/* Apply */}
-        <section
-          id="apply"
-          className="scroll-mt-[10rem] py-16 md:py-24"
-        >
+        <section id="apply" className="scroll-mt-[10rem] py-16 md:py-24">
           <ScrollAnimate>
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/90 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_52%,#ffffff_100%)] p-6 shadow-[0_24px_70px_-42px_rgba(15,23,42,0.16)] md:p-10">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.1),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.06),transparent_28%)]" />
-              <div
-                className="pointer-events-none absolute inset-0 opacity-[0.35]"
-                aria-hidden
-                style={{
-                  backgroundImage:
-                    'linear-gradient(to right, rgb(226 232 240 / 0.65) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.65) 1px, transparent 1px)',
-                  backgroundSize: '36px 36px',
-                  maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.82), rgba(0,0,0,0.18))',
-                }}
-              />
+            <div className="relative overflow-hidden py-8 md:py-12">
+              <div className="pointer-events-none absolute inset-0 opacity-40 animate-gridDrift" aria-hidden style={{ backgroundImage: 'linear-gradient(to right, rgb(226 232 240 / 0.35) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.35) 1px, transparent 1px)', backgroundSize: '42px 42px' }} />
+              <div className="pointer-events-none absolute left-1/2 top-8 h-40 w-[36rem] -translate-x-1/2 rounded-full bg-sky-100/80 blur-3xl" />
+              <div className="pointer-events-none absolute -left-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/[0.12] blur-3xl animate-floatSlow" />
+              <div className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-accent-purple/[0.12] blur-3xl animate-blob" />
 
-              <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_320px] lg:items-end">
-                <div className="max-w-2xl">
-                  <div className="inline-flex items-center rounded-full border border-sky-100 bg-sky-50 px-3.5 py-1.5 font-outfit text-[10px] font-semibold uppercase tracking-[0.2em] text-sky-700">
+              <div className="relative mx-auto max-w-4xl text-center">
+                <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-sky-200/80 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden">
+                  <span className="absolute left-0 top-0 h-px w-28 bg-gradient-to-r from-transparent via-sky-500/80 to-transparent animate-beamSweep" />
+                </div>
+                <div className="pointer-events-none absolute left-8 top-8 h-20 w-px bg-gradient-to-b from-sky-200/70 to-transparent md:left-0 md:h-28" />
+                <div className="pointer-events-none absolute right-8 top-8 h-20 w-px bg-gradient-to-b from-sky-200/70 to-transparent md:right-0 md:h-28" />
+
+                <div className="mx-auto flex w-fit items-center gap-2 px-3 py-1.5">
+                  <span className="relative flex h-2.5 w-2.5 items-center justify-center">
+                    <span className="absolute h-2.5 w-2.5 rounded-full bg-primary/20 animate-pulseRing" />
+                    <span className="relative h-2 w-2 rounded-full bg-gradient-to-r from-primary to-sky-400" />
+                  </span>
+                  <p className="font-outfit text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
                     Careers at Pranavi
-                  </div>
-                  <h2 className="mt-4 font-outfit text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">
-                    {applyInfo.headline}
-                  </h2>
-                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 md:text-base">
-                    {applyInfo.intro} Share your profile and we&apos;ll connect with you if there&apos;s a strong match.
                   </p>
-
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <a
-                      href={`mailto:${applyInfo.email}`}
-                      className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 font-outfit text-sm font-semibold text-slate-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
-                    >
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sky-50 text-primary">
-                        <Mail className="h-4 w-4 shrink-0" strokeWidth={1.9} />
-                      </span>
-                      {applyInfo.email}
-                    </a>
-                    <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 font-outfit text-sm font-medium text-slate-700 shadow-sm">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500">
-                        <MapPin className="h-4 w-4 shrink-0" strokeWidth={1.9} />
-                      </span>
-                      {applyInfo.location}
-                    </div>
-                  </div>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-slate-200/90 bg-white/92 p-5 shadow-[0_18px_50px_-36px_rgba(15,23,42,0.18)]">
-                  <div className="font-outfit text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                    Quick action
-                  </div>
-                  <div className="mt-2 font-outfit text-xl font-semibold tracking-tight text-slate-950">
-                    Prefer to reach out first?
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    Use the contact page for role questions, introductions, or hiring conversations.
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-outfit text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-slate-800"
+                <h2 className="mt-8 font-outfit text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-slate-400">
+                  {applyInfo.headline}
+                </h2>
+                <div className="mt-3 min-h-[3.6rem] md:min-h-[4.5rem]">
+                  <TypedText
+                    phrases={[
+                      'send your resume',
+                      'start the conversation',
+                      'build the future with us',
+                    ]}
+                    className="bg-gradient-to-r from-slate-900 via-primary to-sky-500 bg-clip-text font-outfit text-3xl font-semibold tracking-tight text-transparent drop-shadow-[0_10px_30px_rgba(59,130,246,0.16)] md:text-5xl"
+                  />
+                </div>
+
+                <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+                  {applyInfo.intro} Share your profile and we&apos;ll connect with you if there&apos;s a strong match.
+                </p>
+
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:flex-wrap sm:gap-6">
+                  <a
+                    href={`mailto:${applyInfo.email}`}
+                    className="inline-flex items-center gap-3 font-outfit text-sm font-semibold text-slate-900 transition-colors hover:text-primary"
                   >
-                    Contact form
-                    <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-                  </Link>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-primary shadow-[0_10px_24px_-20px_rgba(59,130,246,0.35)]">
+                      <Mail className="h-4 w-4 shrink-0" strokeWidth={1.9} />
+                    </span>
+                    {applyInfo.email}
+                  </a>
+                  <div className="hidden h-6 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent sm:block" />
+                  <div className="inline-flex items-center gap-3 font-outfit text-sm font-medium text-slate-700">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-slate-500 shadow-[0_10px_24px_-20px_rgba(15,23,42,0.25)]">
+                      <MapPin className="h-4 w-4 shrink-0" strokeWidth={1.9} />
+                    </span>
+                    {applyInfo.location}
+                  </div>
                 </div>
-              </div>
 
-              <p className="relative mt-8 border-t border-slate-200/80 pt-6 text-center text-xs leading-relaxed text-slate-500 md:text-sm">
-                {equalOpportunity}
-              </p>
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                  {['Growth opportunities', 'Modern workflows', 'Collaborative teams'].map((item) => (
+                    <div
+                      key={item}
+                      className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-slate-500"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-sky-400" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="mt-10 inline-flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3.5 font-outfit text-sm font-semibold text-white shadow-[0_22px_50px_-24px_rgba(15,23,42,0.5)] transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:shadow-[0_28px_60px_-24px_rgba(59,130,246,0.28)]"
+                >
+                  Contact form
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+                </Link>
+
+                <p className="mx-auto mt-10 max-w-3xl border-t border-slate-200/70 pt-6 text-center text-xs leading-relaxed text-slate-500 md:text-sm">
+                  {equalOpportunity}
+                </p>
+              </div>
             </div>
           </ScrollAnimate>
         </section>

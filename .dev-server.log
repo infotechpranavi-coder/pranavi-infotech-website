@@ -181,3 +181,6 @@ Creating turbopack project {
  GET /services 200 in 244ms (compile: 45ms, render: 199ms)
  GET /our-work 200 in 143ms (compile: 33ms, render: 110ms)
  GET /our-work 200 in 1716ms (compile: 114ms, render: 1603ms)
+ GET /our-work 200 in 910ms (compile: 20ms, render: 890ms)
+ GET / 200 in 340ms (compile: 77ms, render: 264ms)
+ GET /about 200 in 225ms (compile: 19ms, render: 206ms)

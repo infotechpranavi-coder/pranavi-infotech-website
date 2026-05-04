@@ -1,219 +1,72 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { cn } from '@/lib/utils'
-
-const heroSlides = [
-  {
-    title: 'Application Engineering',
-    blurb: 'Modern web and mobile products built for speed, stability, and scale.',
-    image:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1600',
-  },
-  {
-    title: 'Cloud Infrastructure',
-    blurb: 'Reliable cloud systems designed for performance, continuity, and growth.',
-    image:
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1600',
-  },
-  {
-    title: 'AI Automation',
-    blurb: 'Practical automation that reduces manual effort and improves decisions.',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600',
-  },
-]
-
-const metrics = [
-  ['Build', 'Web, mobile, and enterprise platforms'],
-  ['Scale', 'Cloud-first systems with clean delivery'],
-  ['Optimize', 'Automation that saves time and effort'],
-]
+import { ArrowRight } from 'lucide-react'
 
 export function HomeHero() {
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % heroSlides.length)
-    }, 4200)
-
-    return () => window.clearInterval(interval)
-  }, [])
-
-  const activeSlide = heroSlides[activeIndex]
-
-  const goPrev = () => {
-    setActiveIndex((current) => (current - 1 + heroSlides.length) % heroSlides.length)
-  }
-
-  const goNext = () => {
-    setActiveIndex((current) => (current + 1) % heroSlides.length)
-  }
-
   return (
-    <section className="relative overflow-hidden border-b border-slate-200 bg-white pt-28 pb-16 md:pt-32 md:pb-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.12),transparent_32%),radial-gradient(circle_at_85%_18%,rgba(15,23,42,0.08),transparent_24%),linear-gradient(180deg,#ffffff_0%,#f8fbff_52%,#ffffff_100%)]" />
+    <section className="relative overflow-hidden border-b border-slate-900 bg-[#030712] pt-28 pb-20 md:pt-32 md:pb-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_80%_22%,rgba(56,189,248,0.12),transparent_24%),linear-gradient(180deg,#020617_0%,#030712_54%,#020617_100%)]" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.42]"
+        className="pointer-events-none absolute inset-0 opacity-[0.45]"
         aria-hidden
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgb(226 232 240 / 0.7) 1px, transparent 1px), linear-gradient(to bottom, rgb(226 232 240 / 0.7) 1px, transparent 1px)',
-          backgroundSize: '56px 56px',
-          maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.25))',
+            'linear-gradient(to right, rgba(148,163,184,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.12) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+          maskImage: 'linear-gradient(180deg, rgba(0,0,0,1), rgba(0,0,0,0.4))',
         }}
       />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.7]"
+        aria-hidden
+        style={{
+          backgroundImage:
+            'linear-gradient(90deg, transparent 0 8%, rgba(125,211,252,0.45) 8.2%, transparent 8.4%), linear-gradient(180deg, transparent 0 16%, rgba(191,219,254,0.36) 16.2%, transparent 16.4%), linear-gradient(90deg, transparent 0 38%, rgba(196,181,253,0.34) 38.2%, transparent 38.4%), linear-gradient(180deg, transparent 0 52%, rgba(125,211,252,0.28) 52.2%, transparent 52.4%), linear-gradient(90deg, transparent 0 68%, rgba(191,219,254,0.32) 68.2%, transparent 68.4%), linear-gradient(180deg, transparent 0 76%, rgba(165,180,252,0.26) 76.2%, transparent 76.4%), linear-gradient(90deg, transparent 0 88%, rgba(125,211,252,0.3) 88.2%, transparent 88.4%)',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent" />
+      <div className="pointer-events-none absolute left-[12%] top-[18%] h-32 w-32 rounded-full bg-sky-400/12 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute right-[14%] top-[28%] h-40 w-40 rounded-full bg-indigo-400/10 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute left-[48%] bottom-[14%] h-36 w-36 rounded-full bg-cyan-300/10 blur-3xl animate-pulse" />
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <span className="absolute left-[6%] top-[14%] h-px w-24 bg-gradient-to-r from-transparent via-sky-300/80 to-transparent animate-[pulse_4s_ease-in-out_infinite]" />
+        <span className="absolute left-[18%] top-[38%] h-16 w-px bg-gradient-to-b from-transparent via-slate-200/70 to-transparent animate-[pulse_5s_ease-in-out_infinite]" />
+        <span className="absolute right-[16%] top-[22%] h-px w-28 bg-gradient-to-r from-transparent via-indigo-200/80 to-transparent animate-[pulse_4.5s_ease-in-out_infinite]" />
+        <span className="absolute right-[10%] bottom-[24%] h-20 w-px bg-gradient-to-b from-transparent via-cyan-200/60 to-transparent animate-[pulse_5.5s_ease-in-out_infinite]" />
+        <span className="absolute left-[34%] bottom-[18%] h-px w-20 bg-gradient-to-r from-transparent via-sky-100/80 to-transparent animate-[pulse_4.8s_ease-in-out_infinite]" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(340px,0.9fr)] lg:gap-16">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 font-outfit text-[10px] font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-sm">
-              Enterprise technology partner
-            </div>
-
-            <h1 className="mt-6 max-w-4xl font-outfit text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-slate-950 sm:text-6xl lg:text-[5.5rem]">
-              Clean technology
-              <span className="block text-slate-500">built for real</span>
-              <span className="block text-primary">business momentum.</span>
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-              We design and deliver software, cloud systems, and automation with a clear process, modern execution,
-              and dependable results.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3.5 font-outfit text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-slate-800"
-              >
-                Start a project
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 font-outfit text-sm font-semibold text-slate-700 transition-all hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-950"
-              >
-                View services
-              </Link>
-            </div>
-
-            <div className="mt-10 grid gap-3 sm:grid-cols-3">
-              {metrics.map(([label, text]) => (
-                <div
-                  key={label}
-                  className="rounded-[1.4rem] border border-slate-200 bg-white/90 p-4 shadow-[0_16px_40px_-32px_rgba(15,23,42,0.35)]"
-                >
-                  <div className="font-outfit text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
-                    {label}
-                  </div>
-                  <div className="mt-2 text-sm leading-6 text-slate-600">{text}</div>
-                </div>
-              ))}
-            </div>
+        <div className="max-w-4xl py-10 md:py-16">
+          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 font-outfit text-[10px] font-semibold uppercase tracking-[0.26em] text-sky-100/80 backdrop-blur-sm">
+            Professional technology delivery
           </div>
 
-          <div className="relative">
-            <div className="absolute -left-6 top-12 hidden h-32 w-32 rounded-full bg-cyan-100 blur-3xl lg:block" />
-            <div className="absolute -right-6 bottom-10 hidden h-36 w-36 rounded-full bg-slate-200/80 blur-3xl lg:block" />
+          <h1 className="mt-7 max-w-4xl font-outfit text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-6xl lg:text-[5.75rem]">
+            Modern systems
+            <span className="block text-slate-300">for serious</span>
+            <span className="block bg-gradient-to-r from-sky-200 via-white to-indigo-200 bg-clip-text text-transparent">
+              business growth.
+            </span>
+          </h1>
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_80px_-42px_rgba(15,23,42,0.35)]">
-              <div className="border-b border-slate-200 px-5 py-4 sm:px-6">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <div className="font-outfit text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-500">
-                      Current focus
-                    </div>
-                    <div className="mt-1 font-outfit text-xl font-semibold text-slate-950">
-                      {activeSlide.title}
-                    </div>
-                  </div>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            We build secure software, cloud infrastructure, and automation with a calm execution style and a clear
+            technical standard.
+          </p>
 
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={goPrev}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:border-slate-900 hover:text-slate-950"
-                      aria-label="Previous hero slide"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={goNext}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:border-slate-900 hover:text-slate-950"
-                      aria-label="Next hero slide"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-4 sm:p-5">
-                <div className="relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950">
-                  <div className="relative aspect-[4/4.6]">
-                    {heroSlides.map((slide, index) => (
-                      <div
-                        key={slide.title}
-                        className={cn(
-                          'absolute inset-0 transition-all duration-[900ms] ease-out-smooth',
-                          activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.02]',
-                        )}
-                      >
-                        <img
-                          src={slide.image}
-                          alt={slide.title}
-                          className="h-full w-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.14),rgba(15,23,42,0.72))]" />
-                      </div>
-                    ))}
-
-                    <div className="absolute inset-x-4 top-4 flex items-center justify-between">
-                      <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 font-outfit text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
-                        {String(activeIndex + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
-                      </div>
-                      <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 font-outfit text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
-                        Tech delivery
-                      </div>
-                    </div>
-
-                    <div className="absolute inset-x-4 bottom-4 rounded-[1.35rem] border border-white/12 bg-white/10 p-4 backdrop-blur-md">
-                      <div className="font-outfit text-2xl font-semibold leading-tight text-white">
-                        {activeSlide.title}
-                      </div>
-                      <p className="mt-2 max-w-sm text-sm leading-6 text-white/76">{activeSlide.blurb}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                  {heroSlides.map((slide, index) => (
-                    <button
-                      key={slide.title}
-                      type="button"
-                      onClick={() => setActiveIndex(index)}
-                      className={cn(
-                        'rounded-[1.1rem] border px-4 py-3 text-left transition-all',
-                        activeIndex === index
-                          ? 'border-slate-900 bg-slate-950 text-white'
-                          : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300 hover:bg-white',
-                      )}
-                      aria-label={`Go to hero slide ${index + 1}`}
-                    >
-                      <div className="font-outfit text-[10px] font-semibold uppercase tracking-[0.18em] opacity-70">
-                        Focus area
-                      </div>
-                      <div className="mt-1 font-outfit text-sm font-semibold leading-5">{slide.title}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-outfit text-sm font-semibold text-slate-950 transition-all hover:-translate-y-0.5 hover:bg-slate-100"
+            >
+              Start a project
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+            </Link>
+            <div className="font-outfit text-[11px] font-medium uppercase tracking-[0.24em] text-slate-400">
+              Reliable. Scalable. Professional.
             </div>
           </div>
         </div>
